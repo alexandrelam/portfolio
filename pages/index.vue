@@ -25,6 +25,11 @@ export default {
   background-color: var(--background);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h2 {
   margin: 0;
 }

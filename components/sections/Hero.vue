@@ -1,5 +1,11 @@
 <script>
-export default {};
+import IGithub from "~/components/icons/Github";
+
+export default {
+  components: {
+    IGithub,
+  },
+};
 </script>
 
 <template lang="pug">
@@ -9,8 +15,10 @@ section.hero
     h2 I'm Alexandre LAM, a developer
     h2 based in Paris
   .icons
-    span lang
-    span github
+    a(href="#")
+      span EN
+    a(href="https://github.com/alexandrelam" target="_blank")
+      IGithub.git
 </template>
 
 <style lang="scss" scoped>
@@ -29,6 +37,10 @@ section.hero
     position: absolute;
     top: 2rem;
     right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 
     span {
       display: block;
