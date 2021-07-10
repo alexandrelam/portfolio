@@ -9,7 +9,7 @@
   background-color: var(--background);
 }
 
-.app{
+.app {
   z-index: 50;
   margin-top: -100vh;
 }
@@ -22,7 +22,7 @@
   width: 100%;
   height: 100vh;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.08;
 }
 </style>
 
@@ -46,7 +46,7 @@ export default {
 
       for (let i = 0; i < len; i++) {
         if (Math.random() < 0.5) {
-          buffer32[i] = 0xff000000;
+          buffer32[i] = 0xffffb710;
         }
       }
 
