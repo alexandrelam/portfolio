@@ -33,7 +33,7 @@ section.hero
   .hi-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
 
     .emoji {
       width: 3rem;

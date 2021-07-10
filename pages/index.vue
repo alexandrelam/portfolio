@@ -1,12 +1,17 @@
 <template lang="pug">
-Hero
+div
+  Hero
+  Experiences
 </template>
 
 <script>
 import Hero from "~/components/sections/Hero";
+import Experiences from "~/components/sections/Experiences";
+
 export default {
   components: {
     Hero,
+    Experiences,
   },
 };
 </script>
@@ -22,7 +27,6 @@ export default {
 * {
   font-family: "Roboto", sans-serif;
   color: var(--black);
-  background-color: var(--background);
 }
 
 a {
