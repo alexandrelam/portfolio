@@ -1,9 +1,11 @@
 <script>
 import IGithub from "~/components/icons/Github";
+import IHandWave from "~/components/icons/HandWave";
 
 export default {
   components: {
     IGithub,
+    IHandWave,
   },
 };
 </script>
@@ -11,13 +13,15 @@ export default {
 <template lang="pug">
 section.hero
   .text-wrapper
-    h2 HI
+    .hi-wrapper
+      h2 HI
+      IHandWave.emoji
     h2 I'm Alexandre LAM, a developer
     h2 based in Paris
   .icons
     a(href="#")
       span EN
-    a(href="https://github.com/alexandrelam" target="_blank")
+    a(href="https://github.com/alexandrelam", target="_blank")
       IGithub.git
 </template>
 
@@ -25,6 +29,16 @@ section.hero
 .hero {
   height: 100vh;
   position: relative;
+
+  .hi-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .emoji {
+      width: 3rem;
+    }
+  }
 
   .text-wrapper {
     position: absolute;
