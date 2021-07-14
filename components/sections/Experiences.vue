@@ -1,11 +1,10 @@
-
 <script>
 export default {};
 </script>
 
 <template lang="pug">
 section.experiences
-  h2 test
+  CardList(title="experience")
 </template>
 
 <style lang="scss" scoped>

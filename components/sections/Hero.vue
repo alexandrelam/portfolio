@@ -5,8 +5,8 @@ import IHandWave from "~/components/icons/HandWave";
 export default {
   components: {
     IGithub,
-    IHandWave,
-  },
+    IHandWave
+  }
 };
 </script>
 
