@@ -2,17 +2,20 @@
 div
   Hero
   Experiences
+  Resume
 </template>
 
 <script>
 import Hero from "~/components/sections/Hero";
 import Experiences from "~/components/sections/Experiences";
+import Resume from "~/components/sections/Resume";
 
 export default {
   components: {
     Hero,
     Experiences,
-  },
+    Resume
+  }
 };
 </script>
 
