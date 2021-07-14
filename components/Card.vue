@@ -3,12 +3,16 @@
   div
     span(v-if="isNew").new new
     span {{ titleFormatted }}
-  span.index 01
+  span.index {{ indexFormatted }}
 </template>
 
 <script>
 export default {
   props: {
+    index: {
+      type: Number,
+      required: true
+    },
     title: {
       type: String,
       required: true
@@ -21,6 +25,10 @@ export default {
   computed: {
     titleFormatted() {
       return this.title.toUpperCase();
+    },
+    indexFormatted() {
+      if (this.index + 1 < 10) return `0${this.index + 1}`;
+      return `${this.index + 1}`;
     }
   }
 };
@@ -36,6 +44,7 @@ export default {
   border-top: solid black 1px;
   border-bottom: solid black 1px;
   font-size: 1.5rem;
+  cursor: pointer;
 
   .new {
     color: var(--primary);
