@@ -1,5 +1,5 @@
 <template lang="pug">
-.card
+.card(:class="(index === 0) && 'border-top'")
   div
     span(v-if="isNew").new new
     span {{ titleFormatted }}
@@ -41,7 +41,6 @@ export default {
   align-items: center;
   width: 500px;
   height: 96px;
-  border-top: solid black 1px;
   border-bottom: solid black 1px;
   font-size: 1.5rem;
   cursor: pointer;
@@ -57,5 +56,8 @@ export default {
     font-style: italic;
     font-weight: 300;
   }
+}
+.border-top {
+  border-top: solid black 1px;
 }
 </style>
