@@ -48,15 +48,13 @@ section.experiences
   div.images
   div
     CardList(title="experience" :cardElements="experiencesCards")
-    CardList(title="experience" :cardElements="projectsCards").projects
+    CardList(title="projects" :cardElements="projectsCards").projects
 </template>
 
 <style lang="scss" scoped>
 .experiences {
   display: flex;
-  height: 100vh;
-  margin-top: 18rem;
-  padding: 2rem;
+  padding: 18rem 2rem;
 
   .images {
     flex-grow: 1;
