@@ -3,18 +3,21 @@ div
   Hero
   Experiences
   Resume
+  Footer
 </template>
 
 <script>
 import Hero from "~/components/sections/Hero";
 import Experiences from "~/components/sections/Experiences";
 import Resume from "~/components/sections/Resume";
+import Footer from "~/components/sections/Footer";
 
 export default {
   components: {
     Hero,
     Experiences,
-    Resume
+    Resume,
+    Footer
   }
 };
 </script>
