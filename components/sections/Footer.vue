@@ -65,13 +65,9 @@ export default {
   display: flex;
   flex-direction: column;
 
-  .arrow {
-    width: 10px;
-    display: flex;
-  }
-
   .align-right {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     margin-left: auto;
     margin-top: 28px;
@@ -81,6 +77,11 @@ export default {
     border: none;
     padding: 0;
     outline: inherit;
+
+    .arrow {
+      width: 10px;
+      display: flex;
+    }
 
     span {
       font-family: "Merriweather", sans-serif;
