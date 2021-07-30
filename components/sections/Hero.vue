@@ -6,6 +6,18 @@ export default {
   components: {
     IGithub,
     IHandWave
+  },
+  mounted() {
+    console.log(this.$gsap);
+    this.$nextTick(function() {
+      let tl = this.$gsap.timeline();
+      tl.from("#hi", { opacity: 0, y: 300, duration: 1 });
+      tl.from('.emoji', {opacity: 0, duration: 1})
+      tl.from("#header1", { opacity: 0, y: 300, duration: 1 });
+      tl.from("#header2", { opacity: 0, y: 300, duration: 1 });
+      tl.from("#lang", { opacity: 0, x: 300, duration: 1 });
+      tl.from("#git", { opacity: 0, x: 300, duration: 1 });
+    });
   }
 };
 </script>
@@ -14,14 +26,14 @@ export default {
 section.hero
   .text-wrapper
     .hi-wrapper
-      h2 HI
+      h2#hi HI
       IHandWave.emoji
-    h2 I'm Alexandre LAM, a developer
-    h2 based in Paris
+    h2#header1 I'm Alexandre LAM, a developer
+    h2#header2 based in Paris
   .icons
-    a(href="#")
+    a#lang(href="#")
       span EN
-    a(href="https://github.com/alexandrelam", target="_blank")
+    a#git(href="https://github.com/alexandrelam", target="_blank")
       IGithub.git
 </template>
 
@@ -29,6 +41,7 @@ section.hero
 .hero {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 
   .hi-wrapper {
     display: flex;
