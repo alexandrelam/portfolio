@@ -49,7 +49,8 @@ export default {
     div.text-wrapper
       h2 LET'S GET IN TOUCH
       div.email-wrapper
-        span(v-if="displayCopied").copied Copied!
+        transition(name="fade") 
+          span(v-if="displayCopied").copied Copied!
         button(@click="handleCopy") alexandrelam@outlook.com
         input(type="hidden" id="emailCopy" value="alexandrelam@outlook.com")
     div.info
@@ -58,6 +59,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .footer {
   padding: 5px;
   background-color: var(--blackblack);
