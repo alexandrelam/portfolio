@@ -8,7 +8,6 @@ export default {
     IHandWave
   },
   mounted() {
-    console.log(this.$gsap);
     this.$nextTick(function() {
       let tl = this.$gsap.timeline();
       tl.from("#hi", { opacity: 0, y: 300, duration: 1 });
