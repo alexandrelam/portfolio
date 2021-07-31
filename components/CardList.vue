@@ -5,7 +5,10 @@ div
        v-for="(value, index) in cardElements" 
        :key="index" :index="index" 
        :title="value.title" 
-       :isNew="value.isNew")
+       :isNew="value.isNew"
+       @mouseover="$emit('imageover', value.image)"
+       @mouseleave="$emit('imageleave')"
+       )
 </template>
 
 <script>
