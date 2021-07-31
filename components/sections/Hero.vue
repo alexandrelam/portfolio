@@ -11,11 +11,11 @@ export default {
     this.$nextTick(function() {
       let tl = this.$gsap.timeline();
       tl.from("#hi", { opacity: 0, y: 300, duration: 1 });
-      tl.from('.emoji', {opacity: 0, duration: 1})
-      tl.from("#header1", { opacity: 0, y: 300, duration: 1 });
-      tl.from("#header2", { opacity: 0, y: 300, duration: 1 });
-      tl.from("#lang", { opacity: 0, x: 300, duration: 1 });
-      tl.from("#git", { opacity: 0, x: 300, duration: 1 });
+      tl.from(".emoji", { opacity: 0, duration: 1 }, "<0.8");
+      tl.from("#header1", { opacity: 0, y: 300, duration: 1 }, "0.7");
+      tl.from("#header2", { opacity: 0, y: 300, duration: 1 }, "<0.2");
+      tl.from("#lang", { opacity: 0, x: 300, duration: 1 }, "<0.5");
+      tl.from("#git", { opacity: 0, x: 300, duration: 1 }, "<0.2");
     });
   }
 };
