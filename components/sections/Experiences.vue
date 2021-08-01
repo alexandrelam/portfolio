@@ -55,7 +55,7 @@ export default {
 <template lang="pug">
 section.experiences
   div.image-wrapper
-    div(:style="{ backgroundImage: `url(/_nuxt/assets/${image})` }").image
+    div(:style="{ backgroundImage: `url(/_nuxt/assets/${this.$store.state.imageUrl})` }").image
   div
     CardList(
       title="experience"

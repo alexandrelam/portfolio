@@ -6,8 +6,7 @@ div
        :key="index" :index="index" 
        :title="value.title" 
        :isNew="value.isNew"
-       @mouseover="$emit('imageover', value.image)"
-       @mouseleave="$emit('imageleave')"
+       :image="value.image"
        )
 </template>
 

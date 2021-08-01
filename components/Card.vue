@@ -1,5 +1,9 @@
 <template lang="pug">
-.card(:class="(index === 0) && 'border-top'")
+.card(
+  :class="(index === 0) && 'border-top'"
+  @mouseover="addImageUrl(image)"
+  @mouseleave="resetImageUrl"
+)
   div
     span(v-if="isNew").new new
     span {{ titleFormatted }}
@@ -7,6 +11,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   props: {
     index: {
@@ -14,6 +20,10 @@ export default {
       required: true
     },
     title: {
+      type: String,
+      required: true
+    },
+    image: {
       type: String,
       required: true
     },
@@ -30,6 +40,9 @@ export default {
       if (this.index + 1 < 10) return `0${this.index + 1}`;
       return `${this.index + 1}`;
     }
+  },
+  methods: {
+    ...mapMutations(["addImageUrl", "resetImageUrl"])
   }
 };
 </script>
