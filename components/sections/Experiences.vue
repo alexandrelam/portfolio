@@ -12,7 +12,7 @@ export default {
         {
           title: "ratp",
           isNew: false,
-          image: ""
+          image: "ratp.png"
         }
       ],
       projectsCards: [
@@ -48,6 +48,11 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    imageUrl() {
+      return require(`~/assets/${this.$store.state.imageUrl}`);
+    }
   }
 };
 </script>
@@ -55,7 +60,11 @@ export default {
 <template lang="pug">
 section.experiences
   div.image-wrapper
-    div(:style="{ backgroundImage: `url(/_nuxt/assets/${this.$store.state.imageUrl})` }").image
+    transition(name="fade")
+      div(
+        v-if="this.$store.state.imageUrl" 
+        :style="{backgroundImage: `url(${imageUrl})`}"
+      ).image
   div
     CardList(
       title="experience"
@@ -90,5 +99,15 @@ section.experiences
   .projects {
     margin-top: 140px;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
