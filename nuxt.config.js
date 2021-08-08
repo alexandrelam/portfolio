@@ -28,7 +28,8 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
+        href:
+          "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
       },
       {
         rel: "stylesheet",
@@ -41,7 +42,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/gsap.js'],
+  plugins: ["~/plugins/gsap.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,5 +54,14 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    extend(config) {
+      // ...
+      config.module.rules.push({
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        exclude: /node_modules/,
+        use: ["raw-loader", "glslify-loader"]
+      });
+    }
+  }
 };
