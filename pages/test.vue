@@ -35,7 +35,9 @@ export default {
 
     const planeGeometry = new THREE.PlaneBufferGeometry(12, 18, 32, 32);
     const material = new THREE.ShaderMaterial({
-      uniforms: {},
+      uniforms: {
+        uColor: { value: new THREE.Color(0, 0, 0) }
+      },
       vertexShader: glsl(vertex),
       fragmentShader: glsl(fragment)
     });
