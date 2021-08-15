@@ -33,11 +33,14 @@ export default {
     renderer.setClearColor(0xf2f2f2, 0);
     document.body.appendChild(renderer.domElement);
 
+    const texture = new THREE.TextureLoader().load(this.imageUrl);
+
     const planeGeometry = new THREE.PlaneBufferGeometry(0.4, 0.6, 16, 16);
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        uColor: { value: new THREE.Color(0, 0.4, 0.1) },
-        uTime: { value: 0 }
+        uColor: { value: new THREE.Color(0, 0.0, 0.0) },
+        uTime: { value: 0 },
+        uTexture: { value: texture }
       },
       vertexShader: glsl(vertex),
       fragmentShader: glsl(fragment)
@@ -55,6 +58,11 @@ export default {
     };
 
     animate();
+  },
+  computed: {
+    imageUrl() {
+      return require(`~/assets/okarito.png`);
+    }
   }
 };
 </script>
