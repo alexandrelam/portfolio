@@ -16,12 +16,12 @@ export default {
     scene.add(light);
 
     let camera = new THREE.PerspectiveCamera(
-      1,
+      10,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
-    camera.position.z = 50;
+    camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true
@@ -40,8 +40,7 @@ export default {
         uTime: { value: 0 }
       },
       vertexShader: glsl(vertex),
-      fragmentShader: glsl(fragment),
-      wireframe: true
+      fragmentShader: glsl(fragment)
     });
 
     const mesh = new THREE.Mesh(planeGeometry, material);
