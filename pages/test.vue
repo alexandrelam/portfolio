@@ -40,7 +40,8 @@ export default {
         uTime: { value: 0 }
       },
       vertexShader: glsl(vertex),
-      fragmentShader: glsl(fragment)
+      fragmentShader: glsl(fragment),
+      wireframe: true
     });
 
     const mesh = new THREE.Mesh(planeGeometry, material);
