@@ -16,7 +16,7 @@ export default {
     scene.add(light);
 
     let camera = new THREE.PerspectiveCamera(
-      45,
+      1,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
@@ -33,10 +33,11 @@ export default {
     renderer.setClearColor(0xf2f2f2, 0);
     document.body.appendChild(renderer.domElement);
 
-    const planeGeometry = new THREE.PlaneBufferGeometry(12, 18, 32, 32);
+    const planeGeometry = new THREE.PlaneBufferGeometry(0.4, 0.6, 16, 16);
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        uColor: { value: new THREE.Color(0, 0, 0) }
+        uColor: { value: new THREE.Color(0, 0.4, 0.1) },
+        uTime: { value: 0 }
       },
       vertexShader: glsl(vertex),
       fragmentShader: glsl(fragment)
@@ -45,7 +46,15 @@ export default {
     const mesh = new THREE.Mesh(planeGeometry, material);
     scene.add(mesh);
 
-    renderer.render(scene, camera);
+    let clock = new THREE.Clock();
+
+    const animate = function() {
+      requestAnimationFrame(animate);
+      material.uniforms.uTime.value = clock.getElapsedTime();
+      renderer.render(scene, camera);
+    };
+
+    animate();
   }
 };
 </script>
