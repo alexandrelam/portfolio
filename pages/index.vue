@@ -1,6 +1,5 @@
 <template lang="pug">
 div
-  NuxtLink(to="/test") test link
   Hero
   Experiences
   Resume

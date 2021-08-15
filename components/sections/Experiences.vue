@@ -2,7 +2,6 @@
 export default {
   data() {
     return {
-      image: "",
       experiencesCards: [
         {
           title: "okarito",
@@ -51,7 +50,8 @@ export default {
   },
   computed: {
     imageUrl() {
-      return require(`~/assets/${this.$store.state.imageUrl}`);
+      if (this.$store.state.imageUrl) return require(`~/assets/ratp.png`);
+      return "";
     }
   }
 };
@@ -60,17 +60,11 @@ export default {
 <template lang="pug">
 section.experiences
   div.image-wrapper
-    transition(name="fade")
-      div(
-        v-if="this.$store.state.imageUrl" 
-        :style="{backgroundImage: `url(${imageUrl})`}"
-      ).image
+    ThreeImage(v-if="imageUrl" :imageUrl="imageUrl")
   div
     CardList(
       title="experience"
-      :cardElements="experiencesCards"
-      @imageover="(newImage)=>image=newImage"
-      @imageleave="image=''")
+      :cardElements="experiencesCards")
     CardList(title="projects" :cardElements="projectsCards").projects
 </template>
 
