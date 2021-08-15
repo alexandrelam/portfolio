@@ -7,6 +7,6 @@ varying float vWave;
 
 void main() {
     float wave = vWave * 0.1;
-    vec3 texture = texture2D(uTexture, vUv + wave).rgb;
-    gl_FragColor = vec4(texture, 1.0);
+    vec4 texture = texture2D(uTexture, vUv + wave).rgba;
+    gl_FragColor = vec4(texture);
 }
