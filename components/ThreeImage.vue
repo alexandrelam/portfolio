@@ -1,5 +1,5 @@
 <template lang="pug">
-div#three-image
+#three-image
 </template>
 
 <script>
@@ -14,6 +14,18 @@ export default {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      material: new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uTexture: { value: "" }
+        },
+        vertexShader: glsl(vertex),
+        fragmentShader: glsl(fragment)
+      })
+    };
   },
   mounted() {
     const scene = new THREE.Scene();
@@ -56,32 +68,15 @@ export default {
       fragmentShader: glsl(fragment)
     });
 
-    const mesh = new THREE.Mesh(planeGeometry, material);
+    const mesh = new THREE.Mesh(planeGeometry, this.material);
     scene.add(mesh);
 
     let clock = new THREE.Clock();
 
-    function resizeCanvasToDisplaySize() {
-      const canvas = renderer.domElement;
-      // look up the size the canvas is being displayed
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
-
-      // adjust displayBuffer size to match
-      if (canvas.width !== width || canvas.height !== height) {
-        // you must pass false here or three.js sadly fights the browser
-        renderer.setSize(width, height, false);
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-
-        // update any render target sizes here
-      }
-    }
-
     if (this.imageUrl)
-      material.uniforms.uTexture.value = textureLoader.load(this.imageUrl);
+      this.material.uniforms.uTexture.value = textureLoader.load(this.imageUrl);
 
-    const animate = function() {
+    const animate = () => {
       requestAnimationFrame(animate);
 
       renderer.setSize(
@@ -89,11 +84,20 @@ export default {
         container.getBoundingClientRect().height
       );
 
-      material.uniforms.uTime.value = clock.getElapsedTime();
+      this.material.uniforms.uTime.value = clock.getElapsedTime();
       renderer.render(scene, camera);
     };
 
     animate();
+  },
+  watch: {
+    imageUrl() {
+      if (this.imageUrl) {
+        this.material.uniforms.uTexture.value = new THREE.TextureLoader().load(
+          this.imageUrl
+        );
+      }
+    }
   }
 };
 </script>

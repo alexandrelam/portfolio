@@ -50,8 +50,7 @@ export default {
   },
   computed: {
     imageUrl() {
-      if (this.$store.state.imageUrl) return require(`~/assets/ratp.png`);
-      return "";
+      return require(`~/assets/${this.$store.state.imageUrl}`);
     }
   }
 };
@@ -60,7 +59,7 @@ export default {
 <template lang="pug">
 section.experiences
   div.image-wrapper
-    ThreeImage(v-if="imageUrl" :imageUrl="imageUrl")
+    ThreeImage(:imageUrl="imageUrl")
   div
     CardList(
       title="experience"

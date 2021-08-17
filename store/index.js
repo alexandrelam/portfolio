@@ -1,5 +1,5 @@
 export const state = () => ({
-  imageUrl: ""
+  imageUrl: "okarito.png"
 });
 
 export const mutations = {
@@ -7,6 +7,7 @@ export const mutations = {
     state.imageUrl = link;
   },
   resetImageUrl(state) {
-    state.imageUrl = "";
+    // state.imageUrl = "";
+    console.log('reset')
   }
 };
