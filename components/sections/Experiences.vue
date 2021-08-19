@@ -2,76 +2,67 @@
 export default {
   data() {
     return {
-      image: "",
       experiencesCards: [
         {
           title: "okarito",
           isNew: true,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "ratp",
           isNew: false,
-          image: "ratp.png"
-        }
+          image: "ratp.png",
+        },
       ],
       projectsCards: [
         {
           title: "portfoliov3",
           isNew: true,
-          image: ""
+          image: "okarito.png",
         },
         {
           title: "lesgrainsdesel",
           isNew: true,
-          image: ""
+          image: "okarito.png",
         },
         {
           title: "buzzer",
           isNew: false,
-          image: ""
+          image: "okarito.png",
         },
         {
           title: "data handling for ratp",
           isNew: false,
-          image: ""
+          image: "okarito.png",
         },
         {
           title: "machine learning labelling",
           isNew: false,
-          image: ""
+          image: "okarito.png",
         },
         {
           title: "grapher",
           isNew: false,
-          image: ""
-        }
-      ]
+          image: "okarito.png",
+        },
+      ],
     };
   },
   computed: {
     imageUrl() {
       return require(`~/assets/${this.$store.state.imageUrl}`);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <template lang="pug">
 section.experiences
-  div.image-wrapper
-    transition(name="fade")
-      div(
-        v-if="this.$store.state.imageUrl" 
-        :style="{backgroundImage: `url(${imageUrl})`}"
-      ).image
+  .image-wrapper
+    ThreeImage(:imageUrl="imageUrl")
   div
-    CardList(
-      title="experience"
-      :cardElements="experiencesCards"
-      @imageover="(newImage)=>image=newImage"
-      @imageleave="image=''")
-    CardList(title="projects" :cardElements="projectsCards").projects
+    CardList(title="experience", :cardElements="experiencesCards")
+    CardList.projects(title="projects", :cardElements="projectsCards")
 </template>
 
 <style lang="scss" scoped>
