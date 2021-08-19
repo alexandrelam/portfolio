@@ -17,8 +17,6 @@ export default {
   },
   data() {
     return {
-      imageWidth: 0,
-      imageHeight: 0,
       material: new THREE.ShaderMaterial({
         uniforms: {
           uTime: { value: 0 },
@@ -27,21 +25,10 @@ export default {
         vertexShader: glsl(vertex),
         fragmentShader: glsl(fragment),
       }),
+      mesh: "",
     };
   },
-  methods: {
-    loadImageSize(url) {
-      console.log(url);
-      var img = new Image();
-      img.src = url;
-      img.addEventListener("load", (e) => {
-        this.imageWidth = e.path[0].width;
-        this.imageHeight = e.path[0].height;
-      });
-    },
-  },
   mounted() {
-    this.loadImageSize(this.imageUrl);
     const scene = new THREE.Scene();
 
     const light = new THREE.PointLight(0xff0000, 1, 100);
@@ -64,27 +51,18 @@ export default {
       this.$gsap.utils.clamp(1.5, 1, window.devicePixelRatio)
     );
     renderer.setSize(
-      container.getBoundingClientRect().width * 1.2,
-      (container.getBoundingClientRect().width * this.imageHeight * 0.7) /
-        this.imageWidth
+      container.getBoundingClientRect().width,
+      container.getBoundingClientRect().height
     );
     renderer.setClearColor(0xf2f2f2, 0);
     container.appendChild(renderer.domElement);
 
     const textureLoader = new THREE.TextureLoader();
 
-    const planeGeometry = new THREE.PlaneBufferGeometry(0.4, 0.6, 16, 16);
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        uTime: { value: 0 },
-        uTexture: { value: "" },
-      },
-      vertexShader: glsl(vertex),
-      fragmentShader: glsl(fragment),
-    });
+    const planeGeometry = new THREE.PlaneBufferGeometry(0.7, 0.7, 16, 16);
 
-    const mesh = new THREE.Mesh(planeGeometry, this.material);
-    scene.add(mesh);
+    this.mesh = new THREE.Mesh(planeGeometry, this.material);
+    scene.add(this.mesh);
 
     let clock = new THREE.Clock();
 
@@ -95,9 +73,8 @@ export default {
       requestAnimationFrame(animate);
 
       renderer.setSize(
-        container.getBoundingClientRect().width * 1.2,
-        (container.getBoundingClientRect().width * this.imageHeight * 0.7) /
-          this.imageWidth
+        container.getBoundingClientRect().width,
+        container.getBoundingClientRect().height
       );
 
       this.material.uniforms.uTime.value = clock.getElapsedTime();
@@ -109,10 +86,19 @@ export default {
   watch: {
     imageUrl() {
       if (this.imageUrl) {
-        this.loadImageSize(this.imageUrl);
-        this.material.uniforms.uTexture.value = new THREE.TextureLoader().load(
-          this.imageUrl
+        const imageTexture = new THREE.TextureLoader().load(
+          this.imageUrl,
+          (tex) => {
+            const planeGeometry = new THREE.PlaneBufferGeometry(
+              0.7,
+              (0.7 * tex.image.height) / tex.image.width,
+              16,
+              16
+            );
+            this.mesh.geometry = planeGeometry;
+          }
         );
+        this.material.uniforms.uTexture.value = imageTexture;
       }
     },
   },
@@ -127,5 +113,6 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+  inset: 0;
 }
 </style>

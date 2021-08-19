@@ -76,6 +76,7 @@ section.experiences
   }
 
   .image-wrapper {
+    position: relative;
     flex-grow: 1;
     display: flex;
     justify-content: center;
