@@ -12,22 +12,36 @@ export default {
   props: {
     imageUrl: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
+      imageWidth: 0,
+      imageHeight: 0,
       material: new THREE.ShaderMaterial({
         uniforms: {
           uTime: { value: 0 },
-          uTexture: { value: "" }
+          uTexture: { value: "" },
         },
         vertexShader: glsl(vertex),
-        fragmentShader: glsl(fragment)
-      })
+        fragmentShader: glsl(fragment),
+      }),
     };
   },
+  methods: {
+    loadImageSize(url) {
+      console.log(url);
+      var img = new Image();
+      img.src = url;
+      img.addEventListener("load", (e) => {
+        this.imageWidth = e.path[0].width;
+        this.imageHeight = e.path[0].height;
+      });
+    },
+  },
   mounted() {
+    this.loadImageSize(this.imageUrl);
     const scene = new THREE.Scene();
 
     const light = new THREE.PointLight(0xff0000, 1, 100);
@@ -44,14 +58,15 @@ export default {
 
     const container = document.getElementById("three-image");
     const renderer = new THREE.WebGLRenderer({
-      alpha: true
+      alpha: true,
     });
     renderer.setPixelRatio(
       this.$gsap.utils.clamp(1.5, 1, window.devicePixelRatio)
     );
     renderer.setSize(
       container.getBoundingClientRect().width,
-      container.getBoundingClientRect().height
+      (container.getBoundingClientRect().width * this.imageHeight) /
+        this.imageWidth
     );
     renderer.setClearColor(0xf2f2f2, 0);
     container.appendChild(renderer.domElement);
@@ -62,10 +77,10 @@ export default {
     const material = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0 },
-        uTexture: { value: "" }
+        uTexture: { value: "" },
       },
       vertexShader: glsl(vertex),
-      fragmentShader: glsl(fragment)
+      fragmentShader: glsl(fragment),
     });
 
     const mesh = new THREE.Mesh(planeGeometry, this.material);
@@ -80,8 +95,9 @@ export default {
       requestAnimationFrame(animate);
 
       renderer.setSize(
-        container.getBoundingClientRect().width,
-        container.getBoundingClientRect().height
+        container.getBoundingClientRect().width * 1.1,
+        (container.getBoundingClientRect().width * this.imageHeight) /
+          this.imageWidth
       );
 
       this.material.uniforms.uTime.value = clock.getElapsedTime();
@@ -93,18 +109,22 @@ export default {
   watch: {
     imageUrl() {
       if (this.imageUrl) {
+        this.loadImageSize(this.imageUrl);
         this.material.uniforms.uTexture.value = new THREE.TextureLoader().load(
           this.imageUrl
         );
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 #three-image {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
