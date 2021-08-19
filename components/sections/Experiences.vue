@@ -60,7 +60,7 @@ export default {
 section.experiences
   .image-wrapper
     ThreeImage(:imageUrl="imageUrl")
-  div
+  .zindex
     CardList(title="experience", :cardElements="experiencesCards")
     CardList.projects(title="projects", :cardElements="projectsCards")
 </template>
@@ -70,6 +70,10 @@ section.experiences
   display: flex;
   gap: 4rem;
   padding: 18rem 2rem;
+
+  .zindex {
+    z-index: 10;
+  }
 
   .image-wrapper {
     flex-grow: 1;
