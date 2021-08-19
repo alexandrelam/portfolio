@@ -74,14 +74,6 @@ export default {
     const textureLoader = new THREE.TextureLoader();
 
     const planeGeometry = new THREE.PlaneBufferGeometry(0.4, 0.6, 16, 16);
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        uTime: { value: 0 },
-        uTexture: { value: "" },
-      },
-      vertexShader: glsl(vertex),
-      fragmentShader: glsl(fragment),
-    });
 
     const mesh = new THREE.Mesh(planeGeometry, this.material);
     scene.add(mesh);
