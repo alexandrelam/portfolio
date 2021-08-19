@@ -64,8 +64,8 @@ export default {
       this.$gsap.utils.clamp(1.5, 1, window.devicePixelRatio)
     );
     renderer.setSize(
-      container.getBoundingClientRect().width,
-      (container.getBoundingClientRect().width * this.imageHeight) /
+      container.getBoundingClientRect().width * 1.2,
+      (container.getBoundingClientRect().width * this.imageHeight * 0.7) /
         this.imageWidth
     );
     renderer.setClearColor(0xf2f2f2, 0);
@@ -95,8 +95,8 @@ export default {
       requestAnimationFrame(animate);
 
       renderer.setSize(
-        container.getBoundingClientRect().width * 1.1,
-        (container.getBoundingClientRect().width * this.imageHeight) /
+        container.getBoundingClientRect().width * 1.2,
+        (container.getBoundingClientRect().width * this.imageHeight * 0.7) /
           this.imageWidth
       );
 
