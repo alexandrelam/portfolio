@@ -10,15 +10,23 @@ export default {
     let mouseY = 0;
     let xp = 0;
     let yp = 0;
+    let scrollY = 0;
+
     document.addEventListener("mousemove", (e) => {
-      mouseX = e.pageX;
-      mouseY = e.pageY;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    document.addEventListener("scroll", (e) => {
+      scrollY = window.scrollY;
     });
 
     setInterval(function () {
       xp += (mouseX - xp) / 6;
-      yp += (mouseY - yp) / 6;
-      cursor.style.transform = `translate(${xp - 47}px, ${yp - 47}px)`;
+      yp += (mouseY + scrollY - yp) / 6;
+      cursor.style.transform = `translate(${xp - 47}px, ${
+        yp - 47
+      }px)`;
     }, 10);
   },
 };
