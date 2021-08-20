@@ -3,7 +3,17 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
+  computed: {
+    ...mapGetters(["hoverMouseStatus", "hoverMouseSmall"])
+  },
+  watch: {
+    hoverMouseStatus(newStatus) {
+      this.isHover = newStatus;
+    }
+  },
   mounted() {
     const cursor = document.querySelector(".cursor");
     let mouseX = 0;
@@ -11,24 +21,28 @@ export default {
     let xp = 0;
     let yp = 0;
     let scrollY = 0;
+    let cursorScale = 1;
 
-    document.addEventListener("mousemove", (e) => {
+    document.addEventListener("mousemove", e => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     });
 
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener("scroll", e => {
       scrollY = window.scrollY;
     });
 
-    setInterval(function () {
+    setInterval(() => {
+      if (this.hoverMouseStatus && cursorScale >= 0.45 && this.hoverMouseSmall)
+        cursorScale -= 0.02;
+      else if (this.hoverMouseStatus && cursorScale >= 0.8) cursorScale -= 0.01;
+      else if (cursorScale <= 1) cursorScale += 0.01;
       xp += (mouseX - xp) / 6;
       yp += (mouseY + scrollY - yp) / 6;
-      cursor.style.transform = `translate(${xp - 47}px, ${
-        yp - 47
-      }px)`;
+      cursor.style.transform = `translate(${xp - 47}px, ${yp -
+        47}px) scale(${cursorScale})`;
     }, 10);
-  },
+  }
 };
 </script>
 
@@ -41,8 +55,7 @@ export default {
   border-radius: 100%;
   color: rgb(107, 114, 128);
   z-index: 100;
-  transition: height 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96),
-    width 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  transition: scale 5s;
   pointer-events: none;
 }
 </style>

@@ -1,15 +1,22 @@
 <script>
 import IGreenBook from "~/components/icons/GreenBook";
+import { mapMutations } from "vuex";
 export default {
   components: {
     IGreenBook
+  },
+  methods: {
+    ...mapMutations(["setMouseHover"])
   }
 };
 </script>
 
 <template lang="pug">
 section.resume
-  a(href="/static/resume.pdf" download)
+  a(href="/static/resume.pdf" 
+    download
+    @mouseover="setMouseHover(true)"
+    @mouseleave="setMouseHover(false)")
     h2 DOWNLOAD MY RESUME
     IGreenBook
 </template>

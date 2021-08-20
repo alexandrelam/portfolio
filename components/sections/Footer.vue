@@ -1,5 +1,6 @@
 <script>
 import IArrowUp from "~/components/icons/ArrowUp";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
@@ -11,6 +12,7 @@ export default {
     };
   },
   methods: {
+    ...mapMutations(["setMouseHover"]),
     scrollTop() {
       window.scroll({
         top: 0,
@@ -44,14 +46,14 @@ export default {
 <template lang="pug">
   section.footer
     button(@click="scrollTop").align-right
-      span bring me to the top
+      span(@mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)") bring me to the top
       IArrowUp.arrow
     div.text-wrapper
       h2 LET'S GET IN TOUCH
       div.email-wrapper
         transition(name="fade") 
           span(v-if="displayCopied").copied Copied!
-        button(@click="handleCopy") alexandrelam@outlook.com
+        button(@click="handleCopy" @mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)") alexandrelam@outlook.com
         input(type="hidden" id="emailCopy" value="alexandrelam@outlook.com")
     div.info
       span 2021
@@ -59,8 +61,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
