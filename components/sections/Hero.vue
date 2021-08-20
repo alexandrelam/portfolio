@@ -1,6 +1,7 @@
 <script>
 import IGithub from "~/components/icons/Github";
 import IHandWave from "~/components/icons/HandWave";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
@@ -17,6 +18,9 @@ export default {
       tl.from("#lang", { opacity: 0, x: 300, duration: 1 }, "<0.3");
       tl.from("#git", { opacity: 0, x: 300, duration: 1 }, "<0.2");
     });
+  },
+  methods: {
+    ...mapMutations(["setMouseHover", "setMouseSmall"])
   }
 };
 </script>
@@ -30,9 +34,15 @@ section.hero
     h2#header1 I'm Alexandre LAM, a developer
     h2#header2 based in Paris
   .icons
-    a#lang(href="#")
+    a#lang(href="#" 
+          @mouseover="setMouseHover(true); setMouseSmall(true)"
+          @mouseleave="setMouseHover(false); setMouseSmall(false)"
+          )
       span EN
-    a#git(href="https://github.com/alexandrelam", target="_blank")
+    a#git(href="https://github.com/alexandrelam"
+          target="_blank"
+          @mouseover="setMouseHover(true); setMouseSmall(true)"
+          @mouseleave="setMouseHover(false); setMouseSmall(false)")
       IGithub.git
 </template>
 

@@ -1,8 +1,8 @@
 <template lang="pug">
 .card(
   :class="(index === 0) && 'border-top'"
-  @mouseover="addImageUrl(image)"
-  @mouseleave="resetImageUrl"
+  @mouseover="addImageUrl(image); setMouseHover(true)"
+  @mouseleave="resetImageUrl; setMouseHover(false)"
 )
   div
     span(v-if="isNew").new new
@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(["addImageUrl", "resetImageUrl"])
+    ...mapMutations(["addImageUrl", "resetImageUrl", "setMouseHover"])
   }
 };
 </script>

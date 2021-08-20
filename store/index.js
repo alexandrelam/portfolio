@@ -1,6 +1,13 @@
 export const state = () => ({
-  imageUrl: "okarito.png"
+  imageUrl: "okarito.png",
+  hoverMouse: false,
+  hoverMouseSmall: false
 });
+
+export const getters = {
+  hoverMouseStatus: state => state.hoverMouse,
+  hoverMouseSmall: state => state.hoverMouseSmall
+};
 
 export const mutations = {
   addImageUrl(state, link) {
@@ -8,6 +15,12 @@ export const mutations = {
   },
   resetImageUrl(state) {
     // state.imageUrl = "";
-    console.log('reset')
+    console.log("reset");
+  },
+  setMouseHover(state, bool) {
+    state.hoverMouse = bool;
+  },
+  setMouseSmall(state, bool) {
+    state.hoverMouseSmall = bool;
   }
 };
