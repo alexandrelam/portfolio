@@ -1,13 +1,14 @@
 <template lang="pug">
-.card(
-  :class="(index === 0) && 'border-top'"
-  @mouseover="addImageUrl(image); setMouseHover(true)"
-  @mouseleave="resetImageUrl; setMouseHover(false)"
-)
-  div
-    span(v-if="isNew").new new
-    span {{ titleFormatted }}
-  span.index {{ indexFormatted }}
+NuxtLink(:to="link")
+  .card(
+    :class="(index === 0) && 'border-top'"
+    @mouseover="addImageUrl(image); setMouseHover(true)"
+    @mouseleave="resetImageUrl; setMouseHover(false)"
+  )
+    div
+      span(v-if="isNew").new new
+      span {{ titleFormatted }}
+    span.index {{ indexFormatted }}
 </template>
 
 <script>
@@ -39,6 +40,9 @@ export default {
     indexFormatted() {
       if (this.index + 1 < 10) return `0${this.index + 1}`;
       return `${this.index + 1}`;
+    },
+    link() {
+      return "/experiences/" + this.title.replace(/\s/g, "");
     }
   },
   methods: {
