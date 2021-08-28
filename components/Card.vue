@@ -18,20 +18,20 @@ export default {
   props: {
     index: {
       type: Number,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     isNew: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     titleFormatted() {
@@ -43,11 +43,11 @@ export default {
     },
     link() {
       return "/experiences/" + this.title.replace(/\s/g, "");
-    }
+    },
   },
   methods: {
-    ...mapMutations(["addImageUrl", "resetImageUrl", "setMouseHover"])
-  }
+    ...mapMutations(["addImageUrl", "resetImageUrl", "setMouseHover"]),
+  },
 };
 </script>
 

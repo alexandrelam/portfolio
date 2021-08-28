@@ -4,11 +4,11 @@ import { mapMutations } from "vuex";
 
 export default {
   components: {
-    IArrowUp
+    IArrowUp,
   },
   data() {
     return {
-      displayCopied: false
+      displayCopied: false,
     };
   },
   methods: {
@@ -17,7 +17,7 @@ export default {
       window.scroll({
         top: 0,
         left: 0,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     },
     handleCopy() {
@@ -38,8 +38,8 @@ export default {
       /* unselect the range */
       testingCodeToCopy.setAttribute("type", "hidden");
       window.getSelection().removeAllRanges();
-    }
-  }
+    },
+  },
 };
 </script>
 
