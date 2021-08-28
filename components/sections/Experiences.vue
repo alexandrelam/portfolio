@@ -6,55 +6,55 @@ export default {
         {
           title: "okarito",
           isNew: true,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "ratp",
           isNew: false,
-          image: "ratp.png"
-        }
+          image: "ratp.png",
+        },
       ],
       projectsCards: [
         {
           title: "portfoliov3",
           isNew: true,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "lesgrainsdesel",
           isNew: true,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "buzzer",
           isNew: false,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "data handling for ratp",
           isNew: false,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "machine learning labelling",
           isNew: false,
-          image: "okarito.png"
+          image: "okarito.png",
         },
         {
           title: "grapher",
           isNew: false,
-          image: "okarito.png"
-        }
-      ]
+          image: "okarito.png",
+        },
+      ],
     };
   },
   computed: {
     imageUrl() {
-      if(this.$store.state.imageUrl.length)
+      if (this.$store.state.imageUrl.length)
         return require(`~/assets/${this.$store.state.imageUrl}`);
-      return ''
-    }
-  }
+      return "";
+    },
+  },
 };
 </script>
 

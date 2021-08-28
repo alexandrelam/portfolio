@@ -7,12 +7,12 @@ import { mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["hoverMouseStatus", "hoverMouseSmall"])
+    ...mapGetters(["hoverMouseStatus", "hoverMouseSmall"]),
   },
   watch: {
     hoverMouseStatus(newStatus) {
       this.isHover = newStatus;
-    }
+    },
   },
   mounted() {
     const cursor = document.querySelector(".cursor");
@@ -23,12 +23,12 @@ export default {
     let scrollY = 0;
     let cursorScale = 1;
 
-    document.addEventListener("mousemove", e => {
+    document.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     });
 
-    document.addEventListener("scroll", e => {
+    document.addEventListener("scroll", (e) => {
       scrollY = window.scrollY;
     });
 
@@ -39,10 +39,11 @@ export default {
       else if (cursorScale <= 1) cursorScale += 0.01;
       xp += (mouseX - xp) / 6;
       yp += (mouseY + scrollY - yp) / 6;
-      cursor.style.transform = `translate(${xp - 47}px, ${yp -
-        47}px) scale(${cursorScale})`;
+      cursor.style.transform = `translate(${xp - 47}px, ${
+        yp - 47
+      }px) scale(${cursorScale})`;
     }, 10);
-  }
+  },
 };
 </script>
 

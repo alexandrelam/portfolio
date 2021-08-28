@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "IArrowUp"
+  name: "IArrowUp",
 };
 </script>
 <template>

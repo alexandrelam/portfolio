@@ -3,11 +3,11 @@ import IGreenBook from "~/components/icons/GreenBook";
 import { mapMutations } from "vuex";
 export default {
   components: {
-    IGreenBook
+    IGreenBook,
   },
   methods: {
-    ...mapMutations(["setMouseHover"])
-  }
+    ...mapMutations(["setMouseHover"]),
+  },
 };
 </script>
 

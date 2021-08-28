@@ -6,10 +6,10 @@ import { mapMutations } from "vuex";
 export default {
   components: {
     IGithub,
-    IHandWave
+    IHandWave,
   },
   mounted() {
-    this.$nextTick(function() {
+    this.$nextTick(function () {
       let tl = this.$gsap.timeline();
       tl.from("#hi", { opacity: 0, y: 300, duration: 0.8 });
       tl.from(".emoji", { opacity: 0, duration: 1 }, "<0.8");
@@ -20,8 +20,8 @@ export default {
     });
   },
   methods: {
-    ...mapMutations(["setMouseHover", "setMouseSmall"])
-  }
+    ...mapMutations(["setMouseHover", "setMouseSmall"]),
+  },
 };
 </script>
 

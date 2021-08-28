@@ -15,18 +15,18 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     cardElements: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     titleFormatted() {
       return this.title.toUpperCase();
-    }
-  }
+    },
+  },
 };
 </script>
 
