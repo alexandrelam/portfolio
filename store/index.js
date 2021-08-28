@@ -14,8 +14,7 @@ export const mutations = {
     state.imageUrl = link;
   },
   resetImageUrl(state) {
-    // state.imageUrl = "";
-    console.log("reset");
+    state.imageUrl = "";
   },
   setMouseHover(state, bool) {
     state.hoverMouse = bool;

@@ -50,7 +50,9 @@ export default {
   },
   computed: {
     imageUrl() {
-      return require(`~/assets/${this.$store.state.imageUrl}`);
+      if(this.$store.state.imageUrl.length)
+        return require(`~/assets/${this.$store.state.imageUrl}`);
+      return ''
     }
   }
 };
@@ -59,7 +61,8 @@ export default {
 <template lang="pug">
 section.experiences
   .image-wrapper
-    ThreeImage(:imageUrl="imageUrl")
+    transition(name="fade")
+      ThreeImage(v-show="imageUrl.length" :imageUrl="imageUrl")
   .zindex
     CardList(title="experience", :cardElements="experiencesCards")
     CardList.projects(title="projects", :cardElements="projectsCards")
@@ -95,15 +98,15 @@ section.experiences
   .projects {
     margin-top: 140px;
   }
-}
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 1s;
+  }
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
 }
 </style>
