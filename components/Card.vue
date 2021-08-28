@@ -3,7 +3,7 @@ NuxtLink(:to="link")
   .card(
     :class="(index === 0) && 'border-top'"
     @mouseover="addImageUrl(image); setMouseHover(true)"
-    @mouseleave="resetImageUrl; setMouseHover(false)"
+    @mouseleave="resetImageUrl(); setMouseHover(false)"
   )
     div
       span(v-if="isNew").new new

@@ -85,21 +85,19 @@ export default {
   },
   watch: {
     imageUrl() {
-      if (this.imageUrl) {
-        const imageTexture = new THREE.TextureLoader().load(
-          this.imageUrl,
-          (tex) => {
-            const planeGeometry = new THREE.PlaneBufferGeometry(
-              0.7,
-              (0.7 * tex.image.height) / tex.image.width,
-              16,
-              16
-            );
-            this.mesh.geometry = planeGeometry;
-          }
-        );
-        this.material.uniforms.uTexture.value = imageTexture;
-      }
+      const imageTexture = new THREE.TextureLoader().load(
+        this.imageUrl,
+        (tex) => {
+          const planeGeometry = new THREE.PlaneBufferGeometry(
+            0.7,
+            (0.7 * tex.image.height) / tex.image.width,
+            16,
+            16
+          );
+          this.mesh.geometry = planeGeometry;
+        }
+      );
+      this.material.uniforms.uTexture.value = imageTexture;
     },
   },
 };
