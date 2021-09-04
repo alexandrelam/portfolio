@@ -1,12 +1,12 @@
 export const state = () => ({
   imageUrl: "okarito.png",
   hoverMouse: false,
-  hoverMouseSmall: false
+  hoverMouseSmall: false,
 });
 
 export const getters = {
-  hoverMouseStatus: state => state.hoverMouse,
-  hoverMouseSmall: state => state.hoverMouseSmall
+  hoverMouseStatus: (state) => state.hoverMouse,
+  hoverMouseSmall: (state) => state.hoverMouseSmall,
 };
 
 export const mutations = {
@@ -21,5 +21,5 @@ export const mutations = {
   },
   setMouseSmall(state, bool) {
     state.hoverMouseSmall = bool;
-  }
+  },
 };

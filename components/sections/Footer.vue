@@ -26,7 +26,7 @@ export default {
       testingCodeToCopy.select();
 
       try {
-        var successful = document.execCommand("copy");
+        document.execCommand("copy");
         this.displayCopied = true;
         setTimeout(() => {
           this.displayCopied = false;
