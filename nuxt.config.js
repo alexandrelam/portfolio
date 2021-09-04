@@ -9,13 +9,13 @@ export default {
   head: {
     title: "portfolio-v3",
     htmlAttrs: {
-      lang: "fr"
+      lang: "fr",
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" }
+      { name: "format-detection", content: "telephone=no" },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
@@ -23,19 +23,17 @@ export default {
       { rel: "preconnect", href: "https://fonts.gstatic.com" },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap",
       },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap",
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cabin&display=swap"
-      }
-    ]
+        href: "https://fonts.googleapis.com/css2?family=Cabin&display=swap",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -60,8 +58,8 @@ export default {
       config.module.rules.push({
         test: /\.(glsl|vs|fs|vert|frag)$/,
         exclude: /node_modules/,
-        use: ["raw-loader", "glslify-loader"]
+        use: ["raw-loader", "glslify-loader"],
       });
-    }
-  }
+    },
+  },
 };

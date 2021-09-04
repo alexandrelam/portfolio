@@ -28,7 +28,7 @@ export default {
       mouseY = e.clientY;
     });
 
-    document.addEventListener("scroll", (e) => {
+    document.addEventListener("scroll", () => {
       scrollY = window.scrollY;
     });
 

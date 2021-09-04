@@ -3,6 +3,6 @@ import gsap from "gsap";
 
 Vue.use(gsap);
 
-export default ({ app }, inject) => {
+export default (_, inject) => {
   inject("gsap", gsap);
 };
