@@ -32,7 +32,10 @@ section.description
     div.text
       h2 SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum, libero vitae sollicitudin vestibulum, lacus nibh lobortis magna, a pulvinar nunc magna at purus. Fusce dapibus finibus tellus in cursus. Praesent lacinia, est quis molestie porta, nunc nisi pretium massa, eu commodo nisl arcu sit amet leo. Phasellus et semper odio. Nullam lacinia nec ipsum ornare porttitor. Quisque vehicula orci eget bibendum euismod. Cras elementum sollicitudin mauris, et bibendum dolor euismod eu. Donec in gravida velit, id egestas massa. Phasellus ultricies elit arcu, sed venenatis massa consectetur a. Integer accumsan rutrum molestie.
-  div.tmp
+  div.btn-wrapper
+    button(type="button").more SEE MORE
+  div.next-wrapper
+    h2 NEXT: RATP
 </template>
 
 <script>
@@ -55,6 +58,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+body {
+  margin: 0;
+}
 .description {
   --primary: #ffb600;
   --black: #0b0f25;
@@ -108,8 +114,9 @@ export default {
 }
 
 .details {
-  width: 900px;
+  max-width: 900px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
   margin-top: 100px;
@@ -137,11 +144,11 @@ export default {
     }
   }
   .text {
-    width: 525px;
+    max-width: 525px;
 
     h2 {
       margin: 0;
-      width: 400px;
+      max-width: 400px;
       font-size: 2rem;
     }
 
@@ -151,8 +158,32 @@ export default {
   }
 }
 
+.btn-wrapper {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 3rem;
+
+  .more {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+  }
+}
+
+.next-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: 2rem;
+}
+
 .image {
-  width: 900px;
+  max-width: 900px;
   height: 845px;
   background-color: red;
   margin: auto;
