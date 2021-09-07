@@ -1,7 +1,9 @@
 <template lang="pug">
-    div.description
-        NuxtLink(to="/") go back
-        h1 nothing to see here
+  Details(
+    title="Okarito"
+    :isNew="true"
+    date="mai - août 2021"
+  )
 </template>
 
 <script>
