@@ -34,8 +34,11 @@ section.description
     div.text
       h2 SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum, libero vitae sollicitudin vestibulum, lacus nibh lobortis magna, a pulvinar nunc magna at purus. Fusce dapibus finibus tellus in cursus. Praesent lacinia, est quis molestie porta, nunc nisi pretium massa, eu commodo nisl arcu sit amet leo. Phasellus et semper odio. Nullam lacinia nec ipsum ornare porttitor. Quisque vehicula orci eget bibendum euismod. Cras elementum sollicitudin mauris, et bibendum dolor euismod eu. Donec in gravida velit, id egestas massa. Phasellus ultricies elit arcu, sed venenatis massa consectetur a. Integer accumsan rutrum molestie.
-  div.btn-wrapper
-    button(type="button").more SEE MORE
+  div(v-if="!displaySlotInfo && $slots.default").btn-wrapper
+    button(type="button" @click="displaySlotInfo=true").more SEE MORE
+  transition(name="fade")
+    div(v-if="displaySlotInfo").slot-wrapper
+      slot
   div.next-wrapper
     h2 NEXT: RATP
 </template>
@@ -60,6 +63,11 @@ export default {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      displaySlotInfo: false,
+    };
   },
 };
 </script>
@@ -184,6 +192,12 @@ body {
   }
 }
 
+.slot-wrapper {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 3rem;
+}
+
 .next-wrapper {
   display: flex;
   justify-content: center;
@@ -197,5 +211,13 @@ body {
   height: 845px;
   background-color: red;
   margin: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

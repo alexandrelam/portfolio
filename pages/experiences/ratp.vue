@@ -1,15 +1,11 @@
 <template lang="pug">
-    div.description
-        NuxtLink(to="/") go back
-        h1 nothing to see here
+  Details(
+    title="RATP"
+    :isNew="false"
+    date="mai - août 2020"
+  )
 </template>
 
 <script>
 export default {};
 </script>
-
-<style lang="scss" scoped>
-.description {
-  height: 100vh;
-}
-</style>
