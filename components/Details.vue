@@ -1,5 +1,7 @@
 <template lang="pug">
 section.description
+  NuxtLink(to="/")
+    ICross.cross
   div.header
     div.wrapper
       h1
@@ -12,10 +14,10 @@ section.description
       div.wrapper
         div.child-wrapper
           h4 SITE
-          span https://www.okarito.io/
+          a(href="https://www.okarito.io/" target="_blank") https://www.okarito.io/
         div.child-wrapper
           h4 GIT
-          span https://github.com/okarito
+          a(href="https://github.com/okarito" target="_blank") https://github.com/okarito
         div.child-wrapper
           h4 TIMELINE
           span {{date}}
@@ -39,7 +41,12 @@ section.description
 </template>
 
 <script>
+import ICross from "./icons/Cross.vue";
+
 export default {
+  components: {
+    ICross,
+  },
   props: {
     isNew: {
       type: Boolean,
@@ -61,6 +68,7 @@ export default {
 body {
   margin: 0;
 }
+
 .description {
   --primary: #ffb600;
   --black: #0b0f25;
@@ -76,8 +84,10 @@ body {
   }
 }
 
-.tmp {
-  height: 1000px;
+.cross {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 
 .header {
