@@ -1,5 +1,5 @@
 export const state = () => ({
-  imageUrl: "okarito.png",
+  imageUrl: "",
   hoverMouse: false,
   hoverMouseSmall: false,
 });
