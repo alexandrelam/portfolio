@@ -62,7 +62,10 @@ export default {
 section.experiences
   .image-wrapper
     transition(name="fade")
-      ThreeImage(v-show="imageUrl.length" :imageUrl="imageUrl")
+      div(
+        v-if="this.$store.state.imageUrl" 
+        :style="{backgroundImage: `url(${imageUrl})`}"
+      ).image
   .zindex
     CardList(title="experience", :cardElements="experiencesCards")
     CardList.projects(title="projects", :cardElements="projectsCards")
@@ -86,7 +89,7 @@ section.experiences
     align-items: center;
 
     .image {
-      max-width: 70rem;
+      max-width: 60rem;
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
