@@ -1,5 +1,6 @@
 <template lang="pug">
 .background
+  CustomCursor
   canvas#noise.noise
   Nuxt.app
 </template>

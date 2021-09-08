@@ -14,26 +14,26 @@ section.description
       div.wrapper
         div.child-wrapper
           h4 SITE
-          a(href="https://www.okarito.io/" target="_blank") https://www.okarito.io/
+          a(:href="info.site" target="_blank") {{info.site}}
         div.child-wrapper
           h4 GIT
-          a(href="https://github.com/okarito" target="_blank") https://github.com/okarito
+          a(:href="info.git" target="_blank") {{info.git}}
         div.child-wrapper
           h4 TIMELINE
-          span {{date}}
+          span {{info.timeline}}
       div.wrapper
         div.child-wrapper
           h4 FRONT 
-          span NuxtJS, VueJS, Jest Cypress, GithubCI/CD
+          span {{info.front}}
         div.child-wrapper
           h4 BACK
-          span Ruby on Rails, Firebase, Heroku, PostgreSQL, Swagger
+          span {{info.back}}
         div.child-wrapper
           h4 OTHER 
-          span Figma, Notion
+          span {{info.other}}
     div.text
-      h2 SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum, libero vitae sollicitudin vestibulum, lacus nibh lobortis magna, a pulvinar nunc magna at purus. Fusce dapibus finibus tellus in cursus. Praesent lacinia, est quis molestie porta, nunc nisi pretium massa, eu commodo nisl arcu sit amet leo. Phasellus et semper odio. Nullam lacinia nec ipsum ornare porttitor. Quisque vehicula orci eget bibendum euismod. Cras elementum sollicitudin mauris, et bibendum dolor euismod eu. Donec in gravida velit, id egestas massa. Phasellus ultricies elit arcu, sed venenatis massa consectetur a. Integer accumsan rutrum molestie.
+      h2 {{descriptionTitle}}
+      p {{descriptionParagraph}}
   div(v-if="!displaySlotInfo && $slots.default").btn-wrapper
     button(type="button" @click="displaySlotInfo=true").more SEE MORE
   transition(name="fade")
@@ -60,6 +60,18 @@ export default {
       required: true,
     },
     date: {
+      type: String,
+      required: true,
+    },
+    info: {
+      type: Object,
+      required: true,
+    },
+    descriptionTitle: {
+      type: String,
+      required: true,
+    },
+    descriptionParagraph: {
       type: String,
       required: true,
     },
