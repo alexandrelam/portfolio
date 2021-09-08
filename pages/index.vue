@@ -1,6 +1,5 @@
 <template lang="pug">
 div
-  CustomCursor
   Hero
   Experiences
   Resume
@@ -8,7 +7,6 @@ div
 </template>
 
 <script>
-import CustomCursor from "~/components/CustomCursor";
 import Hero from "~/components/sections/Hero";
 import Experiences from "~/components/sections/Experiences";
 import Resume from "~/components/sections/Resume";
@@ -16,7 +14,6 @@ import Footer from "~/components/sections/Footer";
 
 export default {
   components: {
-    CustomCursor,
     Hero,
     Experiences,
     Resume,
