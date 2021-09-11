@@ -39,12 +39,15 @@ section.description
   transition(name="fade")
     div(v-if="displaySlotInfo").slot-wrapper
       slot
-  div.next-wrapper
-    h2 NEXT: RATP
+  div(type="button").next-wrapper
+    NuxtLink(:to="nextPage.url")
+      button NEXT: {{nextPage.title.toUpperCase()}}
 </template>
 
 <script>
 import ICross from "./icons/Cross.vue";
+import { mapState, mapMutations } from "vuex";
+import selectPage from "~/utils/selectPage";
 
 export default {
   components: {
@@ -79,7 +82,21 @@ export default {
   data() {
     return {
       displaySlotInfo: false,
+      nextPage: { title: "", url: "/" },
     };
+  },
+  computed: {
+    ...mapState(["visited"]),
+  },
+  async mounted() {
+    this.addVisitedPage(this.getRouteName());
+    this.nextPage = await selectPage(this.visited, this.resetVisitedPage);
+  },
+  methods: {
+    ...mapMutations(["addVisitedPage", "resetVisitedPage"]),
+    getRouteName() {
+      return this.$route.name.split("-")[1];
+    },
   },
 };
 </script>
@@ -214,8 +231,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  font-size: 2rem;
+  height: 400px;
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    outline: inherit;
+    font-weight: bold;
+    font-size: 3rem;
+  }
 }
 
 .image {
