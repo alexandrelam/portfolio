@@ -24,9 +24,11 @@ export const mutations = {
     state.hoverMouseSmall = bool;
   },
   addVisitedPage(state, page) {
-    state.visited.push(page);
+    if (!state.visited.includes(page)) state.visited.push(page);
   },
   resetVisitedPage(state) {
+    const tmp = state.visited[0];
     state.visited = [];
+    state.visited.push(tmp);
   },
 };

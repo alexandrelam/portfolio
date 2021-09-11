@@ -1,17 +1,16 @@
-export default async () => {
+export default async (visited, resetVisitedPage) => {
   const projectsCards = await import("~/models/projectsCards.js");
   const experiencesCards = await import("~/models/experiencesCards.js");
-  const store = await import("~/store");
+
   const all = [...projectsCards.default, ...experiencesCards.default];
-  const visited = store.state().visited;
-  let result = all[0];
-  if (all.length === visited.length) store.mutation.resetVisitedPage();
+  let result = all[all.length - 1];
+  if (all.length === visited.length) resetVisitedPage();
   all.forEach((el) => {
-    if (!visited.includes(el.title)) {
-      if (el.priority > result.priority) {
+    if (!visited.includes(el.title.replace(/\s/g, ""))) {
+      if (el.priority >= result.priority) {
         result = el;
       }
     }
   });
-  return result.title;
+  return { title: result.title, url: result.title.replace(/\s/g, "") };
 };

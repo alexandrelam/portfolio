@@ -40,7 +40,8 @@ section.description
     div(v-if="displaySlotInfo").slot-wrapper
       slot
   div(type="button").next-wrapper
-    button NEXT: RATP
+    NuxtLink(:to="nextPage.url")
+      button NEXT: {{nextPage.title.toUpperCase()}}
 </template>
 
 <script>
@@ -81,16 +82,21 @@ export default {
   data() {
     return {
       displaySlotInfo: false,
+      nextPage: { title: "", url: "/" },
     };
-  },
-  mounted() {
-    selectPage(this.visited);
   },
   computed: {
     ...mapState(["visited"]),
   },
+  async mounted() {
+    this.addVisitedPage(this.getRouteName());
+    this.nextPage = await selectPage(this.visited, this.resetVisitedPage);
+  },
   methods: {
     ...mapMutations(["addVisitedPage", "resetVisitedPage"]),
+    getRouteName() {
+      return this.$route.name.split("-")[1];
+    },
   },
 };
 </script>
