@@ -2,6 +2,7 @@ export const state = () => ({
   imageUrl: "",
   hoverMouse: false,
   hoverMouseSmall: false,
+  visited: [],
 });
 
 export const getters = {

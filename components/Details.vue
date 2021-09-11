@@ -39,8 +39,8 @@ section.description
   transition(name="fade")
     div(v-if="displaySlotInfo").slot-wrapper
       slot
-  div.next-wrapper
-    h2 NEXT: RATP
+  button(type="button").next-wrapper
+    span NEXT: RATP
 </template>
 
 <script>
@@ -211,11 +211,24 @@ body {
 }
 
 .next-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  font-size: 2rem;
+  display: block;
+  margin: auto;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  outline: inherit;
+  span {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    font-size: 3rem;
+  }
 }
 
 .image {

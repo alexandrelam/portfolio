@@ -1,51 +1,12 @@
 <script>
+import experiencesCards from "~/models/experiencesCards";
+import projectsCards from "~/models/projectsCards";
+
 export default {
   data() {
     return {
-      experiencesCards: [
-        {
-          title: "okarito",
-          isNew: true,
-          image: "okarito.png",
-        },
-        {
-          title: "ratp",
-          isNew: false,
-          image: "ratp.png",
-        },
-      ],
-      projectsCards: [
-        {
-          title: "portfoliov3",
-          isNew: true,
-          image: "okarito.png",
-        },
-        {
-          title: "lesgrainsdesel",
-          isNew: true,
-          image: "okarito.png",
-        },
-        {
-          title: "buzzer",
-          isNew: false,
-          image: "okarito.png",
-        },
-        {
-          title: "data handling for ratp",
-          isNew: false,
-          image: "okarito.png",
-        },
-        {
-          title: "machine learning labelling",
-          isNew: false,
-          image: "okarito.png",
-        },
-        {
-          title: "grapher",
-          isNew: false,
-          image: "okarito.png",
-        },
-      ],
+      experiencesCards: experiencesCards,
+      projectsCards: projectsCards,
     };
   },
   computed: {
