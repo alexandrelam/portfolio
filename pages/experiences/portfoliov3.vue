@@ -1,6 +1,6 @@
 <template lang="pug">
   Details(
-    title="Okarito"
+    title="Portfolio v3"
     :isNew="true"
     date="mai - août 2021"
     descriptionTitle="SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION"

@@ -1,6 +1,6 @@
 <template lang="pug">
   Details(
-    title="Okarito"
+    title="Les Grains de Sel"
     :isNew="true"
     date="mai - août 2021"
     descriptionTitle="SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION"
