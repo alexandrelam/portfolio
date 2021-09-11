@@ -1,5 +1,5 @@
 <template lang="pug">
-NuxtLink(:to="link")
+NuxtLink(:to="link" @click.native="addVisitedPage(title)")
   .card(
     :class="(index === 0) && 'border-top'"
     @mouseover="addImageUrl(image); setMouseHover(true)"
@@ -46,7 +46,13 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["addImageUrl", "resetImageUrl", "setMouseHover"]),
+    ...mapMutations([
+      "addImageUrl",
+      "resetImageUrl",
+      "setMouseHover",
+      "addVisitedPage",
+      "resetVisitedPage",
+    ]),
   },
 };
 </script>

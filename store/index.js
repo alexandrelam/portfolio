@@ -23,4 +23,10 @@ export const mutations = {
   setMouseSmall(state, bool) {
     state.hoverMouseSmall = bool;
   },
+  addVisitedPage(state, page) {
+    state.visited.push(page);
+  },
+  resetVisitedPage(state) {
+    state.visited = [];
+  },
 };

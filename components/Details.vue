@@ -39,12 +39,14 @@ section.description
   transition(name="fade")
     div(v-if="displaySlotInfo").slot-wrapper
       slot
-  button(type="button").next-wrapper
-    span NEXT: RATP
+  div(type="button").next-wrapper
+    button NEXT: RATP
 </template>
 
 <script>
 import ICross from "./icons/Cross.vue";
+import { mapState, mapMutations } from "vuex";
+import selectPage from "~/utils/selectPage";
 
 export default {
   components: {
@@ -80,6 +82,15 @@ export default {
     return {
       displaySlotInfo: false,
     };
+  },
+  mounted() {
+    selectPage(this.visited);
+  },
+  computed: {
+    ...mapState(["visited"]),
+  },
+  methods: {
+    ...mapMutations(["addVisitedPage", "resetVisitedPage"]),
   },
 };
 </script>
@@ -211,22 +222,21 @@ body {
 }
 
 .next-wrapper {
-  display: block;
-  margin: auto;
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  outline: inherit;
-  span {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    outline: inherit;
     font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
     font-size: 3rem;
   }
 }
