@@ -9,13 +9,6 @@ export default {
       projectsCards: projectsCards,
     };
   },
-  computed: {
-    imageUrl() {
-      if (this.$store.state.imageUrl.length)
-        return require(`~/assets/${this.$store.state.imageUrl}`);
-      return "";
-    },
-  },
 };
 </script>
 
@@ -23,9 +16,11 @@ export default {
 section.experiences
   .image-wrapper
     transition(name="fade")
-      div(
-        v-if="this.$store.state.imageUrl" 
-        :style="{backgroundImage: `url(${imageUrl})`}"
+      nuxt-img(
+        v-if="$store.state.imageUrl.length"
+        :src="$store.state.imageUrl"
+        quality="70"
+        fit="cover"
       ).image
   .zindex
     CardList(title="experience", :cardElements="experiencesCards")
@@ -51,11 +46,7 @@ section.experiences
 
     .image {
       max-width: 60rem;
-      width: 100%;
-      height: 100%;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+      max-height: 80vh;
     }
   }
 

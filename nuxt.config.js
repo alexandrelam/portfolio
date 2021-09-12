@@ -35,7 +35,6 @@ export default {
       },
     ],
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/main.css"],
 
@@ -46,7 +45,9 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ["@nuxt/image"],
+
+  image: {},
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
