@@ -47,6 +47,7 @@ section.experiences
     .image {
       max-width: 60rem;
       max-height: 80vh;
+      border-radius: 0.25rem;
     }
   }
 
