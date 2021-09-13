@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{284:function(n,e,t){n.exports=t.p+"img/hand_wave.2f48cd4.png"},295:function(n,e,t){"use strict";t.r(e);var c={name:"IHandWave"},r=t(26),component=Object(r.a)(c,(function(){var n=this.$createElement;return(this._self._c||n)("img",{attrs:{src:t(284),alt:"hand_wave"}})}),[],!1,null,null,null);e.default=component.exports}}]);
