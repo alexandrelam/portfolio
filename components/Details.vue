@@ -8,7 +8,7 @@ section.description
         span(v-if="isNew").new new
         span {{title}}
       span.date {{date}}
-  div.image
+  img(src="~/static/okarito.png").image
   div.details
     div.infos
       div.wrapper
@@ -248,9 +248,9 @@ body {
 }
 
 .image {
+  display: block;
   max-width: 900px;
   height: 845px;
-  background-color: red;
   margin: auto;
 }
 
