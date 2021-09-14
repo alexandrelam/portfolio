@@ -16,11 +16,9 @@ export default {
 section.experiences
   .image-wrapper
     transition(name="fade")
-      nuxt-img(
+      img(
         v-if="$store.state.imageUrl.length"
         :src="$store.state.imageUrl"
-        quality="70"
-        fit="cover"
       ).image
   .zindex
     CardList(title="experience", :cardElements="experiencesCards")
