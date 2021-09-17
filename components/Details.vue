@@ -8,7 +8,7 @@ section.description
         span(v-if="isNew").new new
         span {{title}}
       span.date {{date}}
-  img(src="~/static/okarito.png").image
+  img(:src="require(`~/static/${image}`)").image
   div.details
     div.infos
       div.wrapper
@@ -59,6 +59,10 @@ export default {
       default: false,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    image: {
       type: String,
       required: true,
     },
