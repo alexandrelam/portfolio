@@ -171,6 +171,7 @@ body {
   justify-content: space-between;
   margin: auto;
   margin-top: 100px;
+  margin-bottom: 100px;
 
   .infos {
     width: 185px;
