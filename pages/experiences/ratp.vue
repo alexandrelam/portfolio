@@ -1,20 +1,16 @@
 <template lang="pug">
   Details(
-    title="RATP"
+    title="Ratp"
     :isNew="false"
+    image="okarito_details.png"
     date="mai - août 2021"
     descriptionTitle="SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION"
-    descriptionParagraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum, libero vitae sollicitudin vestibulum, lacus nibh lobortis magna, a pulvinar nunc magna at purus. Fusce dapibus finibus tellus in cursus. Praesent lacinia, est quis molestie porta, nunc nisi pretium massa, eu commodo nisl arcu sit amet leo. Phasellus et semper odio. Nullam lacinia nec ipsum ornare porttitor. Quisque vehicula orci eget bibendum euismod. Cras elementum sollicitudin mauris, et bibendum dolor euismod eu. Donec in gravida velit, id egestas massa. Phasellus ultricies elit arcu, sed venenatis massa consectetur a. Integer accumsan rutrum molestie."
+    descriptionParagraph="Okarito is a Parisian start-up that aims to improve business travel. It offers an application that allows users to make reservations for flights, trains, hotels and rental cars. I worked at Okarito as a frontend developer and was brought to collaborate with the product manager and the different developers of the company. I participated in the development of more than 65 features and bug fixes and added more than 7350 lines of code to the code base. I followed good developer practices, wrote tests with Jest and Cypress. Thanks to this experience, I learned a lot about the software engineering world and improved my skills in Vuejs and Nuxtjs."
     :info={
-      site:"https://www.okarito.io/",
-      git:"https://github.com/okarito",
+      site:"https://www.ratp.fr/",
       timeline:"4 months",
-      front:"NuxtJS, VueJS, Jest Cypress, GithubCI/CD",
-      back:"Ruby on Rails, Firebase, Heroku, PostgreSQL, Swagger",
-      other:"Figma, Notion"
     }
   )
-    span this is a slot
 </template>
 
 <script>
