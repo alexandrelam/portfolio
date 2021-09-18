@@ -1,20 +1,16 @@
 <template lang="pug">
   Details(
-    title="RATP"
+    title="Ratp"
     :isNew="false"
-    date="mai - août 2021"
-    descriptionTitle="SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION"
-    descriptionParagraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum, libero vitae sollicitudin vestibulum, lacus nibh lobortis magna, a pulvinar nunc magna at purus. Fusce dapibus finibus tellus in cursus. Praesent lacinia, est quis molestie porta, nunc nisi pretium massa, eu commodo nisl arcu sit amet leo. Phasellus et semper odio. Nullam lacinia nec ipsum ornare porttitor. Quisque vehicula orci eget bibendum euismod. Cras elementum sollicitudin mauris, et bibendum dolor euismod eu. Donec in gravida velit, id egestas massa. Phasellus ultricies elit arcu, sed venenatis massa consectetur a. Integer accumsan rutrum molestie."
+    image="ratp_cover.png"
+    date="may - august 2020"
+    descriptionTitle="Flood crisis management software at RATP"
+    descriptionParagraph="The RATP Plan de Prévention contre le Risque Inondation (PPRI), as its name suggests, plans the actions to be taken during a flood. Indeed, in the most extreme case, the flooding of the RATP network could cause massive losses for the company and impact the entire Ile-de-France which would then be deprived of part of public transport, hence the objective of the PPRI unit to develop a new efficient crisis management tool. I joined the PPRI unit from May 11, 2020 to July 31, 2020 as an intern in charge of studies and works. My mission within the PPRI unit was to collect the needs of the various actors and to develop the specifications for this management software."
     :info={
-      site:"https://www.okarito.io/",
-      git:"https://github.com/okarito",
+      site:"https://www.ratp.fr/",
       timeline:"4 months",
-      front:"NuxtJS, VueJS, Jest Cypress, GithubCI/CD",
-      back:"Ruby on Rails, Firebase, Heroku, PostgreSQL, Swagger",
-      other:"Figma, Notion"
     }
   )
-    span this is a slot
 </template>
 
 <script>
