@@ -8,7 +8,7 @@ section.description
         span(v-if="isNew").new new
         span {{title}}
       span.date {{date}}
-  img(src="~/static/okarito.png").image
+  img(:src="require(`~/static/${image}`)").image
   div.details
     div.infos
       div.wrapper
@@ -34,10 +34,10 @@ section.description
     div.text
       h2 {{descriptionTitle}}
       p {{descriptionParagraph}}
-  div(v-if="!displaySlotInfo && $slots.default").btn-wrapper
+  div(v-if="!displaySlotInfo && $slots.default && !alwaysDisplaySlot").btn-wrapper
     button(type="button" @click="displaySlotInfo=true").more SEE MORE
   transition(name="fade")
-    div(v-if="displaySlotInfo").slot-wrapper
+    div(v-if="alwaysDisplaySlot || displaySlotInfo").slot-wrapper
       slot
   div(type="button").next-wrapper
     NuxtLink(:to="nextPage.url")
@@ -58,7 +58,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    alwaysDisplaySlot: {
+      type: Boolean,
+      default: false,
+    },
     title: {
+      type: String,
+      required: true,
+    },
+    image: {
       type: String,
       required: true,
     },
@@ -167,6 +175,7 @@ body {
   justify-content: space-between;
   margin: auto;
   margin-top: 100px;
+  margin-bottom: 100px;
 
   .infos {
     width: 185px;
