@@ -12,23 +12,23 @@ section.description
   div.details
     div.infos
       div.wrapper
-        div.child-wrapper
+        div(v-if="info.site").child-wrapper
           h4 SITE
           a(:href="info.site" target="_blank") {{info.site}}
-        div.child-wrapper
+        div(v-if="info.git").child-wrapper
           h4 GIT
           a(:href="info.git" target="_blank") {{info.git}}
-        div.child-wrapper
+        div(v-if="info.timeline").child-wrapper
           h4 TIMELINE
           span {{info.timeline}}
       div.wrapper
-        div.child-wrapper
+        div(v-if="info.front").child-wrapper
           h4 FRONT 
           span {{info.front}}
-        div.child-wrapper
+        div(v-if="info.back").child-wrapper
           h4 BACK
           span {{info.back}}
-        div.child-wrapper
+        div(v-if="info.other").child-wrapper
           h4 OTHER 
           span {{info.other}}
     div.text
