@@ -34,10 +34,10 @@ section.description
     div.text
       h2 {{descriptionTitle}}
       p {{descriptionParagraph}}
-  div(v-if="!displaySlotInfo && $slots.default").btn-wrapper
+  div(v-if="!displaySlotInfo && $slots.default && !alwaysDisplaySlot").btn-wrapper
     button(type="button" @click="displaySlotInfo=true").more SEE MORE
   transition(name="fade")
-    div(v-if="displaySlotInfo").slot-wrapper
+    div(v-if="alwaysDisplaySlot || displaySlotInfo").slot-wrapper
       slot
   div(type="button").next-wrapper
     NuxtLink(:to="nextPage.url")
@@ -55,6 +55,10 @@ export default {
   },
   props: {
     isNew: {
+      type: Boolean,
+      default: false,
+    },
+    alwaysDisplaySlot: {
       type: Boolean,
       default: false,
     },

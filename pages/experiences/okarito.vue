@@ -2,6 +2,7 @@
   Details(
     title="Okarito"
     :isNew="true"
+    :alwaysDisplaySlot="true"
     image="okarito_details.png"
     date="mai - août 2021"
     descriptionTitle="SHAPING THE FUTURE OF PROFESSIONAL TRANPORTATION"
