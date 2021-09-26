@@ -196,6 +196,12 @@ body {
         span {
           font-style: italic;
         }
+        a {
+          width: 250px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
     }
   }
