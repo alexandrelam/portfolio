@@ -5,7 +5,7 @@
     image="buzzer_cover.png"
     date="december - january 2021"
     descriptionTitle="A SIMPLE BUZZER APP FOR QUIZZES WITH FRIENDS"
-    descriptionParagraph="The RATP Plan de Prévention contre le Risque Inondation (PPRI), as its name suggests, plans the actions to be taken during a flood. Indeed, in the most extreme case, the flooding of the RATP network could cause massive losses for the company and impact the entire Ile-de-France which would then be deprived of part of public transport, hence the objective of the PPRI unit to develop a new efficient crisis management tool. I joined the PPRI unit from May 11, 2020 to July 31, 2020 as an intern in charge of studies and works. My mission within the PPRI unit was to collect the needs of the various actors and to develop the specifications for this management software."
+    descriptionParagraph="Buzzer, as its name suggests, is a buzzer application. It allows several people to connect on the same online platform to share a common buzzer. Very useful during quiz nights with friends, this application is useful to know who buzzed first and track the points of different players. Developed with Nuxt, the application uses the live database of Firebase."
     :info={
       site:"alexandrelam.github.io/buzzer/",
       git:"https://github.com/alexandrelam/buzzer",
