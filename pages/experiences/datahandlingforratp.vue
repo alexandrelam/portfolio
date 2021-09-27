@@ -5,7 +5,7 @@
     image="ratpdata_cover.png"
     date="july 2020"
     descriptionTitle="A VIGICRUE WRAPPER TO EXTRACT DATA"
-    descriptionParagraph="The RATP Plan de Prévention contre le Risque Inondation (PPRI), as its name suggests, plans the actions to be taken during a flood. Indeed, in the most extreme case, the flooding of the RATP network could cause massive losses for the company and impact the entire Ile-de-France which would then be deprived of part of public transport, hence the objective of the PPRI unit to develop a new efficient crisis management tool. I joined the PPRI unit from May 11, 2020 to July 31, 2020 as an intern in charge of studies and works. My mission within the PPRI unit was to collect the needs of the various actors and to develop the specifications for this management software."
+    descriptionParagraph="30joursvigicrues is an application built with React and Gatsby that collects data from Vigicrues. Every month, RATP collects and records the daily water level of the Seine and Marne rivers. This task is tedious because it consists in transferring the data from a graph into an Excel table. My application retrieves the data and displays it directly in a table, which saves time."
     :info={
       site:"https://alexandrelam.github.io/30joursvigicrues/",
       git:"https://github.com/alexandrelam/30joursvigicrues",
