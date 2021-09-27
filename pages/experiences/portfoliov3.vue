@@ -5,7 +5,7 @@
     image="portfolio_cover.png"
     date="july - october 2021"
     descriptionTitle="MY NEW PORTFOLIO"
-    descriptionParagraph="The RATP Plan de Prévention contre le Risque Inondation (PPRI), as its name suggests, plans the actions to be taken during a flood. Indeed, in the most extreme case, the flooding of the RATP network could cause massive losses for the company and impact the entire Ile-de-France which would then be deprived of part of public transport, hence the objective of the PPRI unit to develop a new efficient crisis management tool. I joined the PPRI unit from May 11, 2020 to July 31, 2020 as an intern in charge of studies and works. My mission within the PPRI unit was to collect the needs of the various actors and to develop the specifications for this management software."
+    descriptionParagraph="This portfolio is the result of my passion for design and frontend development. Inspired by Awwwards websites, I tried to combine the elegance of a pretty website while keeping the functional aspect of a portfolio. The landing page is simple and organized around white spaces. This helps guide the user's eye to the essential elements of the page. The most important elements of a portfolio are the experiences and projects. That's why they are accessible directly after the first scroll. Each experience and project has a description page like this one."
     :info={
       site:"https://alexandrelam.github.io/portfolio-v3/",
       git:"https://github.com/alexandrelam/portfolio-v3",
