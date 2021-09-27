@@ -5,10 +5,10 @@
     image="grapher_cover.png"
     date="april - june 2020"
     descriptionTitle="A geogebra clone in C"
-    descriptionParagraph="The RATP Plan de Prévention contre le Risque Inondation (PPRI), as its name suggests, plans the actions to be taken during a flood. Indeed, in the most extreme case, the flooding of the RATP network could cause massive losses for the company and impact the entire Ile-de-France which would then be deprived of part of public transport, hence the objective of the PPRI unit to develop a new efficient crisis management tool. I joined the PPRI unit from May 11, 2020 to July 31, 2020 as an intern in charge of studies and works. My mission within the PPRI unit was to collect the needs of the various actors and to develop the specifications for this management software."
+    descriptionParagraph="Like Geogebra, this application is a graphing tool. It allows us to visualize a mathematical function on a graph. This project allowed me to deepen my knowledge in algorithmic and to practice linkedlist, stacks and binary trees. In this group project, I developed the main part of the functionalities which are the following: the lexical analyser which decomposes the function that we enter as input, the evaluation engine which generates the points of the graph and the graphical display."
     :info={
       timeline:"3 months",
-      front:"C programming, OpenGL",
+      front:"C programming, SDL2, OpenGL",
     }
   )
 </template>
