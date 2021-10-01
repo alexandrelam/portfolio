@@ -1,6 +1,7 @@
 <script>
 import IGithub from "~/components/icons/Github";
 import IHandWave from "~/components/icons/HandWave";
+import { disableScrolling, enableScrolling } from "~/utils/stopScroll";
 import { mapMutations } from "vuex";
 
 export default {
@@ -9,8 +10,11 @@ export default {
     IHandWave,
   },
   mounted() {
+    disableScrolling();
     this.$nextTick(function () {
-      let tl = this.$gsap.timeline();
+      let tl = this.$gsap.timeline({
+        onComplete: enableScrolling,
+      });
       tl.from("#hi", { opacity: 0, y: 300, duration: 0.8 });
       tl.from(".emoji", { opacity: 0, duration: 1 }, "<0.8");
       tl.from("#header1", { opacity: 0, y: 300, duration: 1 }, "0.7");
