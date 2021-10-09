@@ -1,15 +1,15 @@
 <template lang="pug">
 section.description
   NuxtLink(to="/")
-    ICross.cross
+    ICross.cross.stagger
   div.header
     div.wrapper
       h1
-        span(v-if="isNew").new new
-        span {{title}}
-      span.date {{date}}
-  img(:src="require(`~/static/${image}`)").image
-  div.details
+        span(v-if="isNew").new.stagger new
+        span.stagger {{title}}
+      span.date.stagger {{date}}
+  img(:src="require(`~/static/${image}`)").image.stagger
+  div.details.stagger
     div.infos
       div.wrapper
         div(v-if="info.site").child-wrapper
@@ -99,6 +99,16 @@ export default {
   async mounted() {
     this.addVisitedPage(this.getRouteName());
     this.nextPage = await selectPage(this.visited, this.resetVisitedPage);
+
+    this.$nextTick(function () {
+      let tl = this.$gsap.timeline();
+      tl.from(".stagger", 0.6, {
+        opacity: 0,
+        ease: "power4.out",
+        skewY: 7,
+        stagger: 0.3,
+      });
+    });
   },
   methods: {
     ...mapMutations(["addVisitedPage", "resetVisitedPage"]),
