@@ -11,9 +11,9 @@ export default {
   mounted() {
     this.$nextTick(function () {
       let tl = this.$gsap.timeline();
-      tl.from(".stagger", 2.4, {
+      tl.from(".stagger", 1.8, {
         opacity: 0,
-        delay: 0.8,
+        delay: 0.4,
         ease: "power4.out",
         skewY: 4,
         stagger: 0.3,
