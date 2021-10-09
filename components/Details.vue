@@ -102,7 +102,7 @@ export default {
     this.addVisitedPage(this.getRouteName());
     this.nextPage = await selectPage(this.visited, this.resetVisitedPage);
     this.setMouseHover(false);
-    
+
     this.$nextTick(function () {
       let tl = this.$gsap.timeline();
       tl.from(".stagger", 0.6, {
