@@ -41,7 +41,9 @@ section.description
       slot
   div(type="button").next-wrapper
     NuxtLink(:to="nextPage.url")
-      button NEXT: {{nextPage.title.toUpperCase()}}
+      button(@mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)")
+        span See more work: 
+        span#work-title {{nextPage.title}}
 </template>
 
 <script>
@@ -99,9 +101,11 @@ export default {
   async mounted() {
     this.addVisitedPage(this.getRouteName());
     this.nextPage = await selectPage(this.visited, this.resetVisitedPage);
+
+    this.setMouseHover(false);
   },
   methods: {
-    ...mapMutations(["addVisitedPage", "resetVisitedPage"]),
+    ...mapMutations(["addVisitedPage", "resetVisitedPage", "setMouseHover"]),
     getRouteName() {
       return this.$route.name.split("-")[1];
     },
@@ -252,13 +256,23 @@ body {
     background: none;
     color: inherit;
     border: none;
-    padding: 0;
+    padding: 0.8rem;
     font: inherit;
     cursor: pointer;
     outline: inherit;
     outline: inherit;
-    font-weight: bold;
-    font-size: 3rem;
+    font-size: 2.6rem;
+    font-weight: 300;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    width: 900px;
+
+    #work-title {
+      margin-left: 0.5rem;
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-style: italic;
+    }
   }
 }
 
