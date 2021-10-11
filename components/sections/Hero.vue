@@ -11,7 +11,7 @@ export default {
   mounted() {
     this.$nextTick(function () {
       let tl = this.$gsap.timeline();
-      tl.from(".stagger", 1.8, {
+      tl.from(".stagger", 1.4, {
         opacity: 0,
         delay: 0.4,
         ease: "power4.out",
@@ -22,6 +22,9 @@ export default {
   },
   methods: {
     ...mapMutations(["setMouseHover", "setMouseSmall"]),
+    switchLang() {
+      return this.$i18n.locale === "en" ? "fr" : "en";
+    },
   },
 };
 </script>
@@ -30,16 +33,18 @@ export default {
 section.hero
   .text-wrapper
     .hi-wrapper.stagger
-      h2 HI
+      h2 {{ $t('title.hi') }}
       IHandWave.emoji
-    h2.stagger I'm Alexandre LAM, a developer
-    h2.stagger based in Paris
+    h2.stagger {{ $t('title.line1') }}
+    h2.stagger {{ $t('title.line2') }}
   .icons.stagger
-    a(href="#" 
-          @mouseover="setMouseHover(true); setMouseSmall(true)"
-          @mouseleave="setMouseHover(false); setMouseSmall(false)"
-          )
-      span EN
+    div(
+      @mouseover="setMouseHover(true); setMouseSmall(true)"
+      @mouseleave="setMouseHover(false); setMouseSmall(false)"
+    )
+      nuxt-link(
+        :to="switchLocalePath(switchLang())"
+      ) {{ switchLang().toUpperCase() }}
     a(href="https://github.com/alexandrelam"
           target="_blank"
           @mouseover="setMouseHover(true); setMouseSmall(true)"
@@ -85,3 +90,22 @@ section.hero
   }
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "title":{
+      "hi": "Salut",
+      "line1": "Je suis Alexandre, un développeur",
+      "line2": "créatif"
+    }
+  },
+  "en": {
+    "title":{
+      "hi": "HI",
+      "line1": "I'm Alexandre LAM, a developer",
+      "line2": "based in Paris"
+    }
+  }
+}
+</i18n>

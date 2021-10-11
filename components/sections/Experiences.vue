@@ -22,7 +22,7 @@ section.experiences
       ).image
   .zindex
     CardList(title="experience", :cardElements="experiencesCards")
-    CardList.projects(title="projects", :cardElements="projectsCards")
+    CardList.projects(:title="$t('projects')", :cardElements="projectsCards")
 </template>
 
 <style lang="scss" scoped>
@@ -65,3 +65,14 @@ section.experiences
   }
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "projects": "projets"
+  },
+  "en": {
+    "projects": "projects"
+  }
+}
+</i18n>
