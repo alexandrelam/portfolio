@@ -17,7 +17,7 @@ section.resume
     download
     @mouseover="setMouseHover(true)"
     @mouseleave="setMouseHover(false)")
-    h2 DOWNLOAD MY RESUME
+    h2 {{ $t('download').toUpperCase() }}
     IGreenBook
 </template>
 
@@ -41,3 +41,14 @@ section.resume
   }
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "download": "Télécharge mon CV"
+  },
+  "en": {
+    "download": "Download my resume"
+  }
+}
+</i18n>
