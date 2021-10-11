@@ -30,7 +30,7 @@ export default {
 section.hero
   .text-wrapper
     .hi-wrapper.stagger
-      h2 HI
+      h2 HI {{ $t('title') }}
       IHandWave.emoji
     h2.stagger I'm Alexandre LAM, a developer
     h2.stagger based in Paris
@@ -85,3 +85,14 @@ section.hero
   }
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "title": "test fr"
+  },
+  "en": {
+    "title": "test en"
+  }
+}
+</i18n>
