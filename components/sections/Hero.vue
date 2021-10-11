@@ -11,7 +11,7 @@ export default {
   mounted() {
     this.$nextTick(function () {
       let tl = this.$gsap.timeline();
-      tl.from(".stagger", 1.8, {
+      tl.from(".stagger", 1.4, {
         opacity: 0,
         delay: 0.4,
         ease: "power4.out",
@@ -22,6 +22,9 @@ export default {
   },
   methods: {
     ...mapMutations(["setMouseHover", "setMouseSmall"]),
+    switchLang() {
+      return this.$i18n.locale === "en" ? "fr" : "en";
+    },
   },
 };
 </script>
@@ -35,11 +38,13 @@ section.hero
     h2.stagger I'm Alexandre LAM, a developer
     h2.stagger based in Paris
   .icons.stagger
-    a(href="#" 
-          @mouseover="setMouseHover(true); setMouseSmall(true)"
-          @mouseleave="setMouseHover(false); setMouseSmall(false)"
-          )
-      span EN
+    div(
+      @mouseover="setMouseHover(true); setMouseSmall(true)"
+      @mouseleave="setMouseHover(false); setMouseSmall(false)"
+    )
+      nuxt-link(
+        :to="switchLocalePath(switchLang())"
+      ) EN
     a(href="https://github.com/alexandrelam"
           target="_blank"
           @mouseover="setMouseHover(true); setMouseSmall(true)"
