@@ -46,13 +46,13 @@ export default {
 <template lang="pug">
   section.footer
     button(@click="scrollTop").align-right
-      span(@mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)") bring me to the top
+      span(@mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)") {{ $t('top') }}
       IArrowUp.arrow
     div.text-wrapper
-      h2 LET'S GET IN TOUCH
+      h2 {{ $t('contact') }}
       div.email-wrapper
         transition(name="fade") 
-          span(v-if="displayCopied").copied Copied!
+          span(v-if="displayCopied").copied {{ $t('copy') }}
         button(@click="handleCopy" @mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)") alexandrelam@outlook.com
         input(type="hidden" id="emailCopy" value="alexandrelam@outlook.com")
     div.info
@@ -152,3 +152,18 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "contact": "CONTACTE MOI",
+    "top": "revenir en haut",
+    "copy": "copié !"
+  },
+  "en": {
+    "contact": "LET'S GET IN TOUCH",
+    "top": "bring me to the top",
+    "copy": "copied!"
+  }
+}
+</i18n>

@@ -33,10 +33,10 @@ export default {
 section.hero
   .text-wrapper
     .hi-wrapper.stagger
-      h2 HI {{ $t('title') }}
+      h2 {{ $t('title.hi') }}
       IHandWave.emoji
-    h2.stagger I'm Alexandre LAM, a developer
-    h2.stagger based in Paris
+    h2.stagger {{ $t('title.line1') }}
+    h2.stagger {{ $t('title.line2') }}
   .icons.stagger
     div(
       @mouseover="setMouseHover(true); setMouseSmall(true)"
@@ -44,7 +44,7 @@ section.hero
     )
       nuxt-link(
         :to="switchLocalePath(switchLang())"
-      ) EN
+      ) {{ switchLang().toUpperCase() }}
     a(href="https://github.com/alexandrelam"
           target="_blank"
           @mouseover="setMouseHover(true); setMouseSmall(true)"
@@ -94,10 +94,18 @@ section.hero
 <i18n>
 {
   "fr": {
-    "title": "test fr"
+    "title":{
+      "hi": "Salut",
+      "line1": "Je suis Alexandre, un développeur",
+      "line2": "créatif"
+    }
   },
   "en": {
-    "title": "test en"
+    "title":{
+      "hi": "HI",
+      "line1": "I'm Alexandre LAM, a developer",
+      "line2": "based in Paris"
+    }
   }
 }
 </i18n>
