@@ -1,6 +1,6 @@
 <template lang="pug">
 section.description
-  NuxtLink(to="/")
+  NuxtLink(:to="link")
     ICross.cross.stagger
   div.header
     div.wrapper
@@ -18,9 +18,9 @@ section.description
         div(v-if="info.git").child-wrapper
           h4 GIT
           a(:href="info.git" target="_blank") {{info.git}}
-        div(v-if="info.timeline").child-wrapper
+        div(v-if="info.month").child-wrapper
           h4 TIMELINE
-          span {{info.timeline}}
+          span {{info.month}} {{$tc('month', info.month)}}
       div.wrapper
         div(v-if="info.front").child-wrapper
           h4 FRONT 
@@ -29,7 +29,7 @@ section.description
           h4 BACK
           span {{info.back}}
         div(v-if="info.other").child-wrapper
-          h4 OTHER 
+          h4 {{$t('other')}}
           span {{info.other}}
     div.text
       h2 {{descriptionTitle}}
@@ -42,7 +42,7 @@ section.description
   div(type="button").next-wrapper
     NuxtLink(:to="nextPage.url")
       button(@mouseover="setMouseHover(true)" @mouseleave="setMouseHover(false)")
-        span See more work: 
+        span {{$t('more-work')}}:
         span#work-title {{nextPage.title}}
 </template>
 
@@ -97,6 +97,10 @@ export default {
   },
   computed: {
     ...mapState(["visited"]),
+    link() {
+      if (this.$i18n.locale === "fr") return "/fr/";
+      return "/";
+    },
   },
   async mounted() {
     this.addVisitedPage(this.getRouteName());
@@ -300,3 +304,18 @@ body {
   opacity: 0;
 }
 </style>
+
+<i18n>
+{
+  "fr": {
+    "other": "AUTRE",
+    "month": "mois",
+    "more-work": "Voir plus"
+  },
+  "en": {
+    "other": "OTHER",
+    "month": "month | months",
+    "more-work": "See more work"
+  }
+}
+</i18n>
