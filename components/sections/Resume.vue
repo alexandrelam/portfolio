@@ -18,7 +18,7 @@ section.resume
     @mouseover="setMouseHover(true)"
     @mouseleave="setMouseHover(false)")
     h2 {{ $t('download').toUpperCase() }}
-    IGreenBook
+    IGreenBook.emoji
 </template>
 
 <style lang="scss" scoped>
@@ -28,6 +28,27 @@ section.resume
   align-items: center;
   padding: 18rem 2rem;
   font-size: 2.5rem;
+
+  @media (max-width: 640px) {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0rem 1rem;
+    padding-bottom: 8rem;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    text-align: center;
+    padding: 10rem 1rem;
+    text-decoration: underline;
+  }
+
+  .emoji {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   a {
     display: flex;

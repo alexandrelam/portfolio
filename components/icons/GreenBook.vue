@@ -7,3 +7,11 @@ export default {
   name: "IGreenBook",
 };
 </script>
+
+<style lang="scss" scoped>
+img {
+  @media (max-width: 640px) {
+    width: 80px;
+  }
+}
+</style>
