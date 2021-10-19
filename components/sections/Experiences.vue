@@ -40,6 +40,10 @@ section.experiences
     justify-content: flex-end;
   }
 
+  @media (max-width: 640px) {
+    padding: 8rem 1rem;
+  }
+
   .zindex {
     z-index: 10;
   }
