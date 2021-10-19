@@ -42,6 +42,8 @@ export default {
       return `${this.index + 1}`;
     },
     link() {
+      if (this.$i18n.locale === "fr")
+        return "/fr/experiences/" + this.title.replace(/\s/g, "");
       return "/experiences/" + this.title.replace(/\s/g, "");
     },
   },
