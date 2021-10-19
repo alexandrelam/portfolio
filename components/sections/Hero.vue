@@ -65,6 +65,10 @@ section.hero
 
     .emoji {
       width: 3rem;
+
+      @media (max-width: 640px) {
+        width: 2.5rem;
+      }
     }
   }
 
@@ -73,6 +77,13 @@ section.hero
     left: 2rem;
     bottom: 2rem;
     font-size: 2rem;
+
+    @media (max-width: 640px) {
+      left: 1rem;
+      right: 1.5rem;
+      bottom: 1rem;
+      font-size: 1.5rem;
+    }
   }
 
   .icons {
@@ -83,6 +94,11 @@ section.hero
     flex-direction: column;
     align-items: center;
     gap: 24px;
+
+    @media (max-width: 640px) {
+      top: 1.5rem;
+      right: 1.5rem;
+    }
 
     span {
       display: block;

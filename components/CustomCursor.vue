@@ -58,5 +58,9 @@ export default {
   z-index: 100;
   transition: scale 5s;
   pointer-events: none;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 }
 </style>

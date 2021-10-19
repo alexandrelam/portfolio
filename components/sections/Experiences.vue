@@ -31,6 +31,10 @@ section.experiences
   gap: 4rem;
   padding: 18rem 2rem;
 
+  @media (max-width: 640px) {
+    padding: 8rem 1rem;
+  }
+
   .zindex {
     z-index: 10;
   }
@@ -41,6 +45,10 @@ section.experiences
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
 
     .image {
       width: 100%;

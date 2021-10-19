@@ -64,6 +64,10 @@ export default {
   font-size: 1.5rem;
   cursor: pointer;
 
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+
   .new {
     color: var(--primary);
     font-family: "Merriweather", serif;
