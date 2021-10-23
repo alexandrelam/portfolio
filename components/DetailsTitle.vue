@@ -25,10 +25,9 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: top;
+  width: 100%;
   margin-top: 6.25rem;
   margin-bottom: 6.25rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
 
   h2 {
     font-weight: bold;

@@ -137,6 +137,10 @@ body {
   --blackblack: #0f0f0f;
   --background: #fffcf5;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
   font-family: "Roboto", sans-serif;
   color: var(--black);
 
@@ -196,10 +200,10 @@ body {
 
 .details {
   max-width: 900px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: auto;
   margin-top: 100px;
   margin-bottom: 100px;
 
@@ -271,6 +275,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
   max-width: 900px;
   margin-top: 3rem;
 }
