@@ -171,11 +171,20 @@ body {
       margin: 0;
       font-size: 4rem;
 
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        text-align: center;
+      }
+
       .new {
         font-style: italic;
         font-family: "Merriweather", serif;
         color: var(--primary);
         font-size: 3.4rem;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
       }
     }
 
@@ -193,6 +202,11 @@ body {
   margin: auto;
   margin-top: 100px;
   margin-bottom: 100px;
+
+  @media (max-width: 768px) {
+    margin: 3rem 1rem;
+    gap: 3rem;
+  }
 
   .infos {
     width: 185px;
@@ -254,8 +268,10 @@ body {
 }
 
 .slot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 900px;
-  margin: auto;
   margin-top: 3rem;
 }
 
@@ -280,6 +296,10 @@ body {
     border-bottom: 1px solid;
     width: 900px;
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     #work-title {
       margin-left: 0.5rem;
       font-family: "Merriweather", serif;
@@ -294,6 +314,11 @@ body {
   max-width: 900px;
   height: 845px;
   margin: auto;
+
+  @media (max-width: 900px) {
+    width: 95%;
+    height: auto;
+  }
 }
 
 .fade-enter-active,

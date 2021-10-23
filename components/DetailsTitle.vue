@@ -22,10 +22,13 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: top;
   margin-top: 6.25rem;
   margin-bottom: 6.25rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
   h2 {
     font-weight: bold;
