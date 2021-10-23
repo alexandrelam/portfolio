@@ -94,10 +94,19 @@ export default {
       display: flex;
     }
 
+    @media (max-width: 640px) {
+      margin-top: 1rem;
+      margin-right: 1rem;
+    }
+
     span {
       font-family: "Merriweather", sans-serif;
       font-weight: 700;
       color: white;
+
+      @media (max-width: 640px) {
+        font-size: 0.8rem;
+      }
     }
   }
 
@@ -109,6 +118,10 @@ export default {
       font-family: "Merriweather", sans-serif;
       font-size: 0.875rem;
       color: white;
+
+      @media (max-width: 640px) {
+        font-size: 0.7rem;
+      }
     }
   }
   .text-wrapper {
@@ -118,10 +131,19 @@ export default {
     align-items: center;
     gap: 40px;
 
+    @media (max-width: 640px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
     h2 {
       color: white;
       font-size: 2rem;
       font-family: "Merriweather", sans-serif;
+
+      @media (max-width: 640px) {
+        font-size: 1.5rem;
+      }
     }
 
     .email-wrapper {
@@ -148,6 +170,10 @@ export default {
       padding: 0;
       cursor: pointer;
       outline: inherit;
+
+      @media (max-width: 640px) {
+        font-size: 1.5rem;
+      }
     }
   }
 }

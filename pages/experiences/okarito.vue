@@ -31,6 +31,12 @@
 </template>
 
 <style lang="scss" scoped>
+img {
+  @media (max-width: 900px) {
+    margin: auto;
+    width: 95%;
+  }
+}
 .image-wrapper {
   display: flex;
   flex-wrap: wrap;
