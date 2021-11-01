@@ -120,7 +120,7 @@ export default {
   methods: {
     ...mapMutations(["addVisitedPage", "resetVisitedPage", "setMouseHover"]),
     getRouteName() {
-      return this.$route.name.split("-")[1];
+      return this.$route.path.split("/").at(-1);
     },
   },
 };
