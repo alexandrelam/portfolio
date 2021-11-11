@@ -4,6 +4,7 @@ div
   Experiences
   Resume
   Footer
+  ConsoleMessage
 </template>
 
 <script>
@@ -11,6 +12,7 @@ import Hero from "~/components/sections/Hero";
 import Experiences from "~/components/sections/Experiences";
 import Resume from "~/components/sections/Resume";
 import Footer from "~/components/sections/Footer";
+import ConsoleMessage from "~/components/ConsoleMessage";
 
 export default {
   components: {
@@ -18,6 +20,7 @@ export default {
     Experiences,
     Resume,
     Footer,
+    ConsoleMessage,
   },
 };
 </script>
