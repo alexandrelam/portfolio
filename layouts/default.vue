@@ -1,13 +1,22 @@
 <template lang="pug">
-.background
-  CustomCursor
+div.background
+  div.cursor-container
+    CustomCursor
   canvas#noise.noise
   Nuxt.app
 </template>
 
 <style lang="scss" scoped>
 .background {
+  position: relative;
   background-color: var(--background);
+  
+  .cursor-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+  }
 }
 
 .app {
