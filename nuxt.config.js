@@ -11,7 +11,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "portfolio-v3",
+    title: "Alexandre LAM | Portfolio",
     htmlAttrs: {
       lang: "fr",
     },
