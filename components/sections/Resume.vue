@@ -13,7 +13,7 @@ export default {
 
 <template lang="pug">
 section.resume
-  a(href="/static/resume.pdf" 
+  a(href="alexandre_lam_resume.pdf" 
     download
     @mouseover="setMouseHover(true)"
     @mouseleave="setMouseHover(false)")
