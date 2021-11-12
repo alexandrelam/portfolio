@@ -91,16 +91,12 @@ This is my new portfolio inspired by [Awwwards sites](https://www.awwwards.com/)
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Here are the major frameworks/libraries/tools used to bootstrap my portfolio.
 
-- [Next.js](https://nextjs.org/)
-- [React.js](https://reactjs.org/)
 - [Vue.js](https://vuejs.org/)
-- [Angular](https://angular.io/)
-- [Svelte](https://svelte.dev/)
-- [Laravel](https://laravel.com)
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
+- [Nuxt.js](https://nuxtjs.org/)
+- [GSAP](https://greensock.com/gsap/)
+- [Figma](https://www.figma.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
