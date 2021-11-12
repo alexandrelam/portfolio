@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/alexandrelam/portfolio">
-    <img src="static/favicon.ico" alt="Logo" width="80" height="80">
+    <img src="static/green_book.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center"><i>new</i> Portfolio</h3>
