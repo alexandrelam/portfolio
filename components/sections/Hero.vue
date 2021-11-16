@@ -19,6 +19,19 @@ export default {
         stagger: 0.3,
       });
     });
+
+    // Hero viewport height for mobile
+    // Let's init it
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    // then on resize
+    window.addEventListener("resize", () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
   },
   methods: {
     ...mapMutations(["setMouseHover", "setMouseSmall"]),
@@ -54,7 +67,9 @@ section.hero
 
 <style lang="scss" scoped>
 .hero {
-  height: 100vh;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100); /* Viewport height for mobile */
+
   position: relative;
   overflow: hidden;
 
