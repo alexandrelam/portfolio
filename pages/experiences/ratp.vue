@@ -18,7 +18,7 @@
   "fr": {
     "date": "mai - août 2020",
     "descriptionTitle": "Logiciel de gestion de crise à la RATP",
-    "description": "La cellule du Plan de Prévention contre le Risque Inondation (PPRI) de la RATP prévoit les actions à mener lors d’une crue. En effet, dans le cas le plus extrême (crue centennale), l’inondation du réseau de la RATP pourrait causer des pertes massives pour l’entreprise et impacter toute l’Ile-de-France qui serait alors privé d’une partie des transports en commun, d’où l’objectif de la cellule PPRI de développer un nouvel outil de gestion de crise performant. J’ai intégré la cellule PPRI du 11 mai 2020 au 31 juillet 2020 en tant que stagiaire chargé d’étude et travaux. Ma mission au sein de la cellule PPRI a été de recueillir les besoins des différents acteurs et d’élaborer le cahier des charges de ce logiciel de gestion."
+    "description": "La cellule du Plan de Prévention contre le Risque Inondation (PPRI) de la RATP prévoit les actions à mener lors d’une crue. En effet, dans le cas le plus extrême (crue centennale), l’inondation du réseau de la RATP pourrait causer des pertes massives pour l’entreprise et impacter toute l’Ile-de-France qui serait alors privée d’une partie des transports en commun, d’où l’objectif de la cellule PPRI de développer un nouvel outil de gestion de crise performant. J’ai intégré la cellule PPRI du 11 mai 2020 au 31 juillet 2020 en tant que stagiaire chargé d’étude et travaux. Ma mission au sein de la cellule PPRI a été de recueillir les besoins des différents acteurs et d’élaborer le cahier des charges de ce logiciel de gestion."
   },
   "en": {
     "date": "may - august 2020",

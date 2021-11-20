@@ -21,7 +21,7 @@
   "fr": {
     "date": "juillet 2020",
     "descriptionTitle": "UN WRAPPER POUR RECUPERER LES DONNEES DE VIGICRUE",
-    "description": "30joursvigicrues est une application avec React et Gatsby de recueil des données de Vigicrues. Chaque mois, la RATP relève et enregistre la hauteur quotidienne de l’eau de la Seine et de la Marne. Cette tâche est fastidieuse car elle consiste en le report des données d’un graphique dans un tableau Excel. Mon application récupère les données et les affiche directement dans un tableau, ce qui permet d'économiser du temps."
+    "description": "30joursvigicrues est une application avec React et Gatsby de recueil des données de Vigicrues. Chaque mois, la RATP relève et enregistre la hauteur quotidienne de l’eau de la Seine et de la Marne. Cette tâche est fastidieuse car elle consiste à reporter des données d’un graphique dans un tableau Excel. Mon application récupère les données et les affiche directement dans un tableau, ce qui permet d'économiser du temps."
   },
   "en": {
     "date": "july 2020",
