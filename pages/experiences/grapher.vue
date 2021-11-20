@@ -18,7 +18,7 @@
   "fr": {
     "date": "avril - juillet 2020",
     "descriptionTitle": "UN CLONE DE GEOGEBRA EN C",
-    "description": "Comme Geogebra, cette application est un grapheur. Elle permet de visualiser une fonction mathématique sur un graphique. Ce projet m’a permis d’approfondir mes connaissances en algorithmique et de mettre en pratique les linkedlist, les stacks et les arbres binaires. Dans ce projet de groupe, j’ai développé la majeure partie des fonctionnalités qui sont les suivantes : le moteur d'analyse lexical qui décompose la fonction que l’on rentre en entrée, le moteur d’évaluation qui se charge de générer les points du graphique et l’affichage graphique."
+    "description": "Comme Geogebra, cette application est un grapheur. Elle permet de visualiser une fonction mathématique sur un graphique. Ce projet m’a permis d’approfondir mes connaissances en algorithmique et de mettre en pratique les linkedlist, les stacks et les arbres binaires. Dans ce projet de groupe, j’ai développé la majeure partie des fonctionnalités qui sont les suivantes : le moteur d'analyse lexicale qui décompose la fonction que l’on implémente en entrée, le moteur d’évaluation qui génère les points du graphique et l’affichage graphique."
   },
   "en": {
     "date": "april - june 2020",

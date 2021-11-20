@@ -21,8 +21,8 @@
 {
   "fr": {
     "date": "octobre - février 2021",
-    "descriptionTitle": "LA GESTION D'EVENEMENT POUR UN SUPERMARCHE COOPERATIF",
-    "description": "Les Grains de Sel est un supermarché coopératif à Paris. Le bon fonctionnement du supermarché repose sur la participation de ses adhérents. Les Grains de Sel propose à ses membres des événements tout au long de la semaine. De cette problématique d’optimiser l'organisation de ces événements est née cette application. J’ai développé cette app avec un de mes amis. Il s’est chargé du système d’authentification et je me suis occupé du reste. J’ai réalisé l’ensemble du design sur Figma et l’ai intégré avec Django et PostgreSQL. Nous aussi mis en place Docker afin de faciliter le lancement de l’application en raison de son backend Odoo."
+    "descriptionTitle": "LA GESTION D'EVENEMENTS POUR UN SUPERMARCHE COOPERATIF",
+    "description": "Les Grains de Sel est un supermarché coopératif à Paris. Le bon fonctionnement du supermarché repose sur la participation de ses adhérents. Les Grains de Sel propose à ses membres des événements tout au long de la semaine. De cette problématique d’optimiser l'organisation de ces événements est née cette application. J’ai développé cette app avec un de mes amis. Il s’est chargé du système d’authentification et je me suis occupé du reste. J’ai réalisé l’ensemble du design sur Figma et l’ai intégré avec Django et PostgreSQL. Nous avons aussi mis en place Docker afin de faciliter le lancement de l’application en raison de son backend Odoo."
   },
   "en": {
     "date": "october - february 2021",

@@ -21,7 +21,7 @@
   "fr": {
     "date": "juillet - octobre 2021",
     "descriptionTitle": "MON NOUVEAU PORTFOLIO",
-    "description": "Ce portfolio est le résultat de ma passion pour le design et le développement frontend. Inspiré par les sites de Awwwards, j’ai essayé de combiner l’élégance d’un joli site tout en gardant l’aspect fonctionnel d’un portfolio. La page de landing est simple et est agencée autour des espaces blancs. Cela permet de guider le regard de l’utilisateur vers les éléments essentiels de la page. Le plus important dans un portfolio sont les expériences et les projets. C’est pourquoi, ils sont accessibles directement après le premier scroll. Chaque expérience et projet possède une page de description."
+    "description": "Ce portfolio est le fruit de ma passion pour le design et le développement frontend. Inspiré par les sites de Awwwards, j’ai essayé de combiner (le côté, le visuel, le rendu) agréable d’un site élégant (ou combiner l’élégance d’un site impactant et…)et l’aspect fonctionnel d’un portfolio. La page de landing est simple et est agencée autour des espaces blancs. Cela permet de guider le regard de l’utilisateur vers les éléments essentiels de la page. Le plus important dans un portfolio sont les expériences et les projets. C’est pourquoi, ils sont accessibles immédiatement après le premier scroll. Chaque expérience ou projet possède une page de description."
   },
   "en": {
     "date": "july - october 2021",
