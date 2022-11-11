@@ -1,15 +1,16 @@
 <template lang="pug">
 NuxtLink(:to="link")
   .card(
-    :class="[(index === 0) && 'border-top', (shouldDisplayHoverMe) && 'hover-me']"
+    :class="[(index === 0) && 'border-top']"
     @mouseover="addImageUrl(image); setMouseHover(true); setFirstHoverMouse(true)"
     @mouseleave="resetImageUrl(); setMouseHover(false)"
   )
-    span(v-if="shouldDisplayHoverMe").hover-me-text Hover Me
-    div(v-if="!shouldDisplayHoverMe")
-      span(v-if="isNew").new new
-      span {{ titleFormatted }}
-    span(v-if="!shouldDisplayHoverMe").index {{ indexFormatted }}
+    transition(name="fade")
+      span(v-if="shouldDisplayHoverMe").hover-me Hover Me
+      div(v-if="!shouldDisplayHoverMe")
+        span(v-if="isNew").new new
+        span {{ titleFormatted }}
+      span(v-if="!shouldDisplayHoverMe").index {{ indexFormatted }}
 </template>
 
 <script>
@@ -69,6 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,15 +101,24 @@ export default {
 }
 
 .hover-me {
+  position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #292524;
-}
-
-.hover-me-text {
+  width: 100%;
+  height: 100%;
   color: white;
   font-family: "Merriweather", serif;
   font-style: italic;
   font-weight: 300;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
