@@ -7,7 +7,8 @@ div
        :title="value.title" 
        :isNew="value.isNew"
        :image="value.image"
-       )
+       :isHoverMe="value.isHoverMe"
+      )
 </template>
 
 <script>
