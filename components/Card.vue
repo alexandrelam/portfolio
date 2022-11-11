@@ -1,18 +1,19 @@
 <template lang="pug">
 NuxtLink(:to="link")
   .card(
-    :class="(index === 0) && 'border-top'"
-    @mouseover="addImageUrl(image); setMouseHover(true)"
+    :class="[(index === 0) && 'border-top', (shouldDisplayHoverMe) && 'hover-me']"
+    @mouseover="addImageUrl(image); setMouseHover(true); setFirstHoverMouse(true)"
     @mouseleave="resetImageUrl(); setMouseHover(false)"
   )
-    div
+    span(v-if="shouldDisplayHoverMe").hover-me-text Hover Me
+    div(v-if="!shouldDisplayHoverMe")
       span(v-if="isNew").new new
       span {{ titleFormatted }}
-    span.index {{ indexFormatted }}
+    span(v-if="!shouldDisplayHoverMe").index {{ indexFormatted }}
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   props: {
@@ -32,8 +33,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    isHoverMe: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
+    ...mapGetters(["firstHoverMouse"]),
     titleFormatted() {
       return this.title.toUpperCase();
     },
@@ -46,9 +52,17 @@ export default {
         return "/fr/experiences/" + this.title.replace(/\s/g, "");
       return "/experiences/" + this.title.replace(/\s/g, "");
     },
+    shouldDisplayHoverMe() {
+      return !this.firstHoverMouse && this.isHoverMe;
+    },
   },
   methods: {
-    ...mapMutations(["addImageUrl", "resetImageUrl", "setMouseHover"]),
+    ...mapMutations([
+      "addImageUrl",
+      "resetImageUrl",
+      "setMouseHover",
+      "setFirstHoverMouse",
+    ]),
   },
 };
 </script>
@@ -60,7 +74,7 @@ export default {
   align-items: center;
   width: 500px;
   height: 96px;
-  border-bottom: solid black 1px;
+  border-bottom: solid #292524 1px;
   font-size: 1.5rem;
   cursor: pointer;
 
@@ -81,6 +95,19 @@ export default {
   }
 }
 .border-top {
-  border-top: solid black 1px;
+  border-top: solid #292524 1px;
+}
+
+.hover-me {
+  display: flex;
+  justify-content: center;
+  background-color: #292524;
+}
+
+.hover-me-text {
+  color: white;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  font-weight: 300;
 }
 </style>

@@ -2,12 +2,14 @@ export const state = () => ({
   imageUrl: "",
   hoverMouse: false,
   hoverMouseSmall: false,
+  firstHoverMouse: false,
   visited: [],
 });
 
 export const getters = {
   hoverMouseStatus: (state) => state.hoverMouse,
   hoverMouseSmall: (state) => state.hoverMouseSmall,
+  firstHoverMouse: (state) => state.firstHoverMouse,
 };
 
 export const mutations = {
@@ -30,5 +32,8 @@ export const mutations = {
     const tmp = state.visited[0];
     state.visited = [];
     state.visited.push(tmp);
+  },
+  setFirstHoverMouse(state, bool) {
+    state.firstHoverMouse = bool;
   },
 };
