@@ -1,7 +1,7 @@
 <template lang="pug">
   Details(
     title="Les Grains de Sel"
-    :isNew="true"
+    :isNew="false"
     image="lesgrainsdesel_cover.png"
     :date="$t('date')"
     :descriptionTitle="$t('descriptionTitle')"

@@ -9,7 +9,7 @@ Details(
     :info={
         site:"https://epsor.fr/",
         month: 5,
-        front: "React, Redux, Redux-Sage, Apollo Graphql, Material-UI",
+        front: "React, Redux, Redux-Saga, Apollo Graphql, Material-UI",
         back: "Microservices in NodeJS, Apollo GraphQL, MongoDB, Docker, K8, Cadence, AWS, Kafka",
         other: "Figma"
     }
