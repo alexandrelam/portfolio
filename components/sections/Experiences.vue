@@ -49,7 +49,6 @@ section.experiences
   }
 
   .image-wrapper {
-    position: relative;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -60,8 +59,11 @@ section.experiences
     }
 
     .image {
-      width: 100%;
-      max-width: 60rem;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50vw;
+      max-width: 50rem;
       max-height: 80vh;
       border-radius: 0.25rem;
     }
