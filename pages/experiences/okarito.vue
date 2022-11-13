@@ -1,7 +1,7 @@
 <template lang="pug">
   Details(
     title="Okarito"
-    :isNew="true"
+    :isNew="false"
     :alwaysDisplaySlot="true"
     image="okarito_details.png"
     :date="$t('date')"
