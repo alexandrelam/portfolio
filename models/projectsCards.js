@@ -1,5 +1,12 @@
 export default [
   {
+    title: "ducktape",
+    isNew: true,
+    image: "ducktape.png",
+    priority: 3,
+    isHoverMe: false,
+  },
+  {
     title: "portfoliov3",
     isNew: true,
     image: "portfoliov3.png",
@@ -8,7 +15,7 @@ export default [
   },
   {
     title: "lesgrainsdesel",
-    isNew: true,
+    isNew: false,
     image: "lesgrainsdesel.png",
     priority: 5,
     isHoverMe: false,

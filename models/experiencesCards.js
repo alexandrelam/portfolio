@@ -1,10 +1,17 @@
 export default [
   {
-    title: "okarito",
+    title: "epsor",
     isNew: true,
+    image: "epsor.png",
+    priority: 11,
+    isHoverMe: true,
+  },
+  {
+    title: "okarito",
+    isNew: false,
     image: "okarito.png",
     priority: 10,
-    isHoverMe: true,
+    isHoverMe: false,
   },
   {
     title: "ratp",
