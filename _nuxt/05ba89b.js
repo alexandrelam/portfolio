@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{352:function(e,o,r){"use strict";r.r(o),o.default=[{title:"epsor",isNew:!0,image:"epsor.png",priority:11,isHoverMe:!0},{title:"okarito",isNew:!1,image:"okarito.png",priority:10,isHoverMe:!1},{title:"ratp",isNew:!1,image:"ratp.png",priority:0,isHoverMe:!1}]}}]);
