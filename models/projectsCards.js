@@ -3,7 +3,7 @@ export default [
     title: "ducktape",
     isNew: true,
     image: "ducktape.png",
-    priority: 3,
+    priority: 6,
     isHoverMe: false,
   },
   {

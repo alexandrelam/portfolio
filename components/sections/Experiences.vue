@@ -62,7 +62,7 @@ section.experiences
       position: fixed;
       top: 50%;
       transform: translateY(-50%);
-      width: 100%;
+      width: 50vw;
       max-width: 50rem;
       max-height: 80vh;
       border-radius: 0.25rem;
