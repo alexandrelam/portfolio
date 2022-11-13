@@ -25,7 +25,7 @@
   "en": {
     "date": "november 2022",
     "descriptionTitle": "Share 2s videos with your friends!",
-    "description": "Each day share 2s videos with your friends. These videos are readable in a feed. Ducktape is an application that allows you to share 2s videos with your friends. At the end of each day, the videos are deleted. The application is developed with NextJs and uses the Firebase database to store user information and videos."
+    "description": "Ducktape is an application that allows you to share 2s videos with your friends. These videos are readable in a feed. At the end of each day, the videos are deleted. The application is developed with NextJs and uses the Firebase database to store user information and videos."
   }
 }
 </i18n>
