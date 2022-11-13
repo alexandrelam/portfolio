@@ -33,7 +33,9 @@ section.description
           span {{info.other}}
     div.text
       h2 {{descriptionTitle}}
-      p {{descriptionParagraph}}
+      p(v-if="typeof descriptionParagraph === 'string'") {{descriptionParagraph}}
+      div(v-else)
+        p(v-for="(paragraph, index) in descriptionParagraph" :key="index") {{paragraph}}
   div(v-if="!displaySlotInfo && $slots.default && !alwaysDisplaySlot").btn-wrapper
     button(type="button" @click="displaySlotInfo=true").more SEE MORE
   transition(name="fade")
